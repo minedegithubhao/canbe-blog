@@ -4,11 +4,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "canbe-blog",
   description: "canbe的个人博客",
-  base: '/', // 部署基础路径
-  outDir: '.vitepress/dist', // 输出目录
-  cleanUrls: true, // 清理URL
-  ignoreDeadLinks: true, // 忽略死链接
-  
   themeConfig: {
     // 导航栏
     nav: [
@@ -30,14 +25,7 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/minedegithubhao/canbe-blog' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
-  },
-  
-  // 构建配置
-  build: {
-    rollupOptions: {
-      external: []
-    }
   }
 })

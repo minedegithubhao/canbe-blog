@@ -1,4 +1,4 @@
-name: Deploy VitePress site to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -20,21 +20,56 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
       
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: 18
+          cache: npm
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Debug environment
+        run: |
+          echo "Node version: $(node --version)"
+          echo "npm version: $(npm --version)"
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          ls -la
+          echo "Docs directory contents:"
+          ls -la docs/
+      
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          # 验证vitepress是否正确安装
+          npx vitepress --version || echo "vitepress安装可能有问题"
       
       - name: Build with VitePress
-        run: npm run docs:build
+        run: |
+          # 方法1: 直接使用npm script
+          npm run docs:build || (
+            echo "方法1失败，尝试方法2";
+            # 方法2: 直接调用vitepress
+            npx vitepress build docs || (
+              echo "方法2失败，尝试方法3";
+              # 方法3: 全局安装后调用
+              npm install -g vitepress && vitepress build docs
+            )
+          )
+      
+      - name: Verify build output
+        run: |
+          if [ -d "docs/.vitepress/dist" ]; then
+            echo "构建成功! 输出目录内容:"
+            ls -la docs/.vitepress/dist/
+          else
+            echo "构建失败! dist目录不存在"
+            exit 1
+          fi
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -47,6 +82,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
