@@ -3,23 +3,23 @@
 layout: home
 
 hero:
-  name: "canbe-blog"
-  text: "canbe的个人博客"
-  tagline: My great project tagline
+  name: "canbe个人博客"
+  # text: "canbe个人博客"
+  tagline: Coding is an art that always fascinates people.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: CSDN
+      # link: https://blog.csdn.net/canbe_
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 大模型应用开发
+      link: /大模型-应用开发体系
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 后端开发技术
+    details: Backend development technology
+  - title: 大模型应用开发
+    details: Large - model application development
+  - title: 前端知识探索
+    details: Front - end knowledge exploration
 ---
 
