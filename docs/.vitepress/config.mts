@@ -37,6 +37,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "个人简历", link: "/个人简历/个人简历" },
       { text: "大模型", link: "/大模型/01大模型-应用开发体系" }, // 大模型导航 及 对应连接
+      { text: "吴恩达说Agent", link: "/吴恩达说Agent/吴恩达说Agent" }, // 大模型导航 及 对应连接
     ],
 
     // 侧边栏
