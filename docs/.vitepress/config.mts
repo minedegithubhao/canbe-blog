@@ -1,77 +1,196 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "曹晓东个人博客", // 网站标题
-  base: "/canbe-blog/", // 根据GitHub Pages URL设置基础路径
-  cleanUrls: true, // 清理URL，移除.html后缀
-  ignoreDeadLinks: true, // 忽略死链接警告
-  
-  // 添加Vite配置来处理资源路径
+  title: "乘风个人博客",
+  base: "/canbe-blog/",
+  cleanUrls: true,
+  ignoreDeadLinks: true,
+
   vite: {
-    resolve: {
-      // 配置别名来处理特殊字符路径
-      alias: {
-        // 为包含特殊字符的路径创建别名
-      }
-    },
     build: {
       rollupOptions: {
-        external: [], // 确保所有本地资源都被处理
+        external: [],
         output: {
-          // 保持资源文件名不变，避免编码问题
           assetFileNames: (assetInfo) => {
-            // 对于图片资源，保持原始文件名
-            if (assetInfo.name && /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(assetInfo.name)) {
-              return 'assets/[name].[ext]';
+            if (
+              assetInfo.name &&
+              /\.(png|jpg|jpeg|gif|svg|webp)$/i.test(assetInfo.name)
+            ) {
+              return "assets/[name].[ext]";
             }
-            return 'assets/[name].[hash].[ext]';
-          }
-        }
-      }
-    }
+            return "assets/[name].[hash].[ext]";
+          },
+        },
+      },
+    },
   },
 
   themeConfig: {
-    // 顶部导航栏
     nav: [
       { text: "首页", link: "/" },
+      { text: "后端", link: "/后端/" },
+      { text: "前端", link: "/前端/" },
+      { text: "工程实践", link: "/工程实践/" },
+      { text: "AI 专栏", link: "/大模型/01大模型应用开发的起点" },
       { text: "个人简历", link: "/个人简历/个人简历" },
-      { text: "大模型", link: "/大模型/01大模型-应用开发体系" }, // 大模型导航 及 对应连接
-      { text: "吴恩达说Agent", link: "/吴恩达说Agent/吴恩达说Agent" }, // 大模型导航 及 对应连接
     ],
 
-    // 侧边栏
     sidebar: {
-      '/个人简历/': [
+      "/个人简历/": [
         {
           text: "简历",
-          items: [
-            { text: "个人简历", link: "/个人简历/个人简历" }
-          ]
-        }
+          items: [{ text: "个人简历", link: "/个人简历/个人简历" }],
+        },
       ],
-      '/大模型/': [ // 点击大模型进入该目录
+      "/后端/": [
         {
-          text: "大模型学习笔记", // 知识块名称
+          text: "后端",
+          items: [{ text: "栏目导读", link: "/后端/" }],
+        },
+        {
+          text: "Spring",
           items: [
-            { text: "01 大模型-应用开发体系", link: "/大模型/01大模型-应用开发体系" }, // text：子项名称(侧边栏展示)，link：文件路径
+            {
+              text: "01 Spring Boot 配置与 Bean 管理",
+              link: "/后端/01SpringBoot配置与Bean管理",
+            },
+          ],
+        },
+        {
+          text: "SQL",
+          items: [
+            {
+              text: "02 SQL 优化与执行计划",
+              link: "/后端/02SQL优化与执行计划",
+            },
+          ],
+        },
+        {
+          text: "其它",
+          items: [
+            { text: "栏目导读", link: "/后端/" },
+            {
+              text: "03 JWT 权限系统最小闭环",
+              link: "/后端/03JWT权限系统最小闭环",
+            },
+          ],
+        },
+      ],
+      "/前端/": [
+        {
+          text: "前端",
+          items: [{ text: "栏目导读", link: "/前端/" }],
+        },
+        {
+          text: "React",
+          items: [
+            {
+              text: "02 React 项目起步",
+              link: "/前端/02React项目怎么起步",
+            },
+            {
+              text: "03 React JSX 与组件",
+              link: "/前端/03ReactJSX与组件",
+            },
+            {
+              text: "04 React state、props、refs 与表单",
+              link: "/前端/04ReactStatePropsRefs与表单",
+            },
+            {
+              text: "05 React Hooks 与组件进阶",
+              link: "/前端/05ReactHooks与组件进阶",
+            },
+            {
+              text: "06 React Router 路由实战",
+              link: "/前端/06ReactRouter路由实战",
+            },
+            {
+              text: "07 React Redux 入门",
+              link: "/前端/07ReactRedux入门",
+            },
+          ],
+        },
+        {
+          text: "Vue",
+          items: [
+            {
+              text: "01 Vue3基础",
+              link: "/前端/01Vue3基础",
+            },
+            {
+              text: "08 Vue3后台项目实战",
+              link: "/前端/08Vue3后台项目实战",
+            },
+          ],
+        },
+      ],
+      "/工程实践/": [
+        {
+          text: "工程实践",
+          items: [
+            { text: "栏目导读", link: "/工程实践/" },
+            {
+              text: "01 Linux 常用命令",
+              link: "/工程实践/01Linux常用命令",
+            },
+            {
+              text: "02 开发环境安装与版本管理：SDKMAN、NVM、pnpm 一次讲清",
+              link: "/工程实践/02开发环境安装与版本管理",
+            },
+            {
+              text: "03 IDEA 修改项目名称",
+              link: "/工程实践/03IDEA修改项目名称",
+            },
+            {
+              text: "04 开发环境高频报错排查",
+              link: "/工程实践/04开发环境高频报错排查",
+            },
+            {
+              text: "05 nrm 切换 npm 源",
+              link: "/工程实践/05nrm切换npm源",
+            },
+            {
+              text: "06 Vagrant 虚拟机起步",
+              link: "/工程实践/06Vagrant虚拟机起步",
+            },
+            {
+              text: "07 Docker 安装 MySQL 与 Redis",
+              link: "/工程实践/07Docker安装MySQL与Redis",
+            },
+            {
+              text: "08 K3s 本地集群搭建",
+              link: "/工程实践/08K3s本地集群搭建",
+            },
+          ],
+        },
+      ],
+      "/大模型/": [
+        {
+          text: "AI 专栏",
+          items: [
+            {
+              text: "01 大模型应用开发的起点",
+              link: "/大模型/01大模型应用开发的起点",
+            },
             { text: "02 提示词工程", link: "/大模型/02提示词工程" },
-            { text: "03 提升文本生成质量的方法论", link: "/大模型/03提升文本生成质量的方法论" },
-            { text: "04 语义搜索与RAG", link: "/大模型/04语义搜索与RAG" },
-            { text: "05 多模态LLM", link: "/大模型/05多模态LLM" },
-            { text: "06 训练和微调", link: "/大模型/06训练和微调" }
-          ]
-        }
-      ]
+            {
+              text: "03 提升文本生成质量的方法论",
+              link: "/大模型/03提升文本生成质量的方法论",
+            },
+            { text: "04 语义搜索与 RAG", link: "/大模型/04语义搜索与RAG" },
+            { text: "05 多模态 LLM", link: "/大模型/05多模态LLM" },
+            { text: "06 训练和微调", link: "/大模型/06训练和微调" },
+            { text: "07 吴恩达谈 Agent", link: "/大模型/07吴恩达谈Agent" },
+          ],
+        },
+      ],
     },
 
-    // 大纲配置 - 显示所有级别的标题
     outline: {
-      level: 'deep', // 显示所有级别的标题(h2, h3, h4, h5, h6)
-      label: '目录'   // 大纲标题文本
+      level: "deep",
+      label: "目录",
     },
 
-    // 社交链接
     socialLinks: [
       { icon: "github", link: "https://github.com/minedegithubhao" },
     ],
