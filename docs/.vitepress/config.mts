@@ -183,6 +183,19 @@ export default defineConfig({
             { text: "07 吴恩达谈 Agent", link: "/大模型/07吴恩达谈Agent" },
           ],
         },
+        {
+          text: "langchain",
+          items: [
+            {
+              text: "栏目导读",
+              link: "/大模型/langchain/",
+            },
+            {
+              text: "Model（模型）",
+              link: "/大模型/langchain/model.md",
+            }
+          ],
+        },
       ],
     },
 
