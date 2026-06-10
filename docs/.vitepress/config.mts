@@ -191,9 +191,13 @@ export default defineConfig({
               link: "/大模型/langchain/",
             },
             {
+              text: "API_KEY配置",
+              link: "/大模型/langchain/API_KEY环境变量配置.md",
+            },
+            {
               text: "Model（模型）",
               link: "/大模型/langchain/model.md",
-            }
+            },
           ],
         },
       ],

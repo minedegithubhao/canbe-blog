@@ -221,146 +221,372 @@ print("当前AI消息类型：", type(response))
 
 ### `PromptTemplate`
 
-> 普通提示词模板
+> 普通提示词模板，zero-shot
 
 写法一
 
 ```python
 def demo01():
-    # 定义一个模板
-    template = PromptTemplate.from_template("用一句话介绍{company}的{product}")
-    # 填充变量
-    prompt_value = template.invoke({"company": "阿里云", "product": "通义千问"})
-    print(prompt_value.text)
-```
 
-写法二
-
-```python
-def demo01():
-    # 定义模板
-    template = PromptTemplate(
-        input_variables=["topic", "style"],
-        template="写一段关于 {topic} 的文案，风格是 {style}。"
+    # 1. 定义 Prompt 模板
+    prompt_template = PromptTemplate.from_template(
+        "我的邻居姓{lastname}, 刚生了{gender}, 你帮我起个名字, 简单回答。"
     )
 
-    # 填充变量生成提示词
-    prompt = template.format(topic="夏天", style="治愈温柔")
-    print("生成的提示词：", prompt)
+    prompt_text = prompt_template.format(lastname="张", gender="女儿")
+    res = model.invoke(input=prompt_text)
+    print(res)
 ```
 
 ### `FewShotPromptTemplate`
 
 > 少样本提示词模板
 
-写法一
-
 ```python
 def demo02():
-    # 1. 示例数据（字典列表）
-    examples = [
-        {"q": "1+1", "a": "2"},
-        {"q": "3+5", "a": "8"},
+    # 定义示例模板
+    example_template = PromptTemplate.from_template("单词:{word}, 反义词:{antonym}")
+
+    # 示例数据（列表嵌套字典）
+    example_data = [
+        {"word": "大", "antonym": "小"},
+        {"word": "上", "antonym": "下"}
     ]
 
-    # 2. 示例模板（一行）
-    example_tpl = PromptTemplate.from_template("Q:{q}\nA:{a}")
-
-    # 3. 少样本模板（最简）
-    fewshot = FewShotPromptTemplate(
-        examples=examples,
-        example_prompt=example_tpl,
-        suffix="Q:{input}\nA:",  # 最后用户输入
-        input_variables=["input"]
+    # 构建少样本提示词模板
+    few_shot_prompt = FewShotPromptTemplate(
+        example_prompt=example_template,
+        examples=example_data,
+        prefix="给出给定词的反义词，有如下示例：",
+        suffix="基于示例告诉我：{input_word}的反义词是？",
+        input_variables=['input_word']
     )
 
-    # 4. 调用（和 PromptTemplate 用法一致）
-    val = fewshot.invoke({"input": "7*3"})
-    print(val.text)
-
-demo_fewshot_simple()
+    # 生成最终提示词
+    prompt_text = few_shot_prompt.invoke(input={"input_word": "左"}).to_string()
+    print(prompt_text)
 ```
 
-写法二
+输出
+
+```text
+给出给定词的反义词，有如下示例：
+
+单词:大, 反义词:小
+
+单词:上, 反义词:下
+
+基于示例告诉我：左的反义词是？
+```
+
+### format 和 invoke 的区别
+
+![image-20260610083646584](model.assets/image-20260610083646584.png)
+
+format 是  `BasePromptTemplate` 定义的方法，invoke 是 `Runnable` 定义的方法 
+
+| 区别   | format                             | invoke                                                    |
+| ------ | ---------------------------------- | --------------------------------------------------------- |
+| 功能   | 纯字符串替换，解析占位符生成提示词 | Runnable 接口标准方法，解析占位符生成提示词               |
+| 返回值 | 字符串                             | `PromptValue` 类对象                                      |
+| 传参   | `.format(k=v, k=v, ...)`           | `.invoke({"k":v, "k":v, ...})`                            |
+| 解析   | 支持解析 `{}` 占位符               | 支持解析 `{}` 占位符和 `MessagesPlaceholder` 结构化占位符 |
 
 ```python
-def demo02():
-    # 定义示例（模型学习的模板）
-    examples = [
-        {"question": "1+1=?", "answer": "2"},
-        {"question": "3+5=?", "answer": "8"},
-        {"question": "10-4=?", "answer": "6"}
-    ]
+template = PromptTemplate.from_template("我的邻居是：{lastname}，最喜欢：{hobby}")
 
-    # 定义示例模板
-    example_prompt = PromptTemplate(
-        input_variables=["question", "answer"],
-        template="问题：{question} 答案：{answer}"
-    )
+res = template.format(lastname="张大明", hobby="钓鱼")
+print(res, type(res))
 
-    # 定义FewShot模板
-    few_shot_prompt = FewShotPromptTemplate(
-        examples=examples,
-        example_prompt=example_prompt,
-        prefix="你是一个只会回答数字的计算器，根据示例直接给出答案：",
-        suffix="问题：{input} 答案：",
-        input_variables=["input"]
-    )
+res2 = template.invoke({"lastname": "周杰伦", "hobby": "唱歌"})
+print(res2, type(res2))
+```
 
-    # 填充变量
-    prompt = few_shot_prompt.format(input="7*3=?")
-    print("生成的提示词：\n", prompt)
+输出
 
-    # 调用模型
-    response = model.invoke(prompt)
-    print("AI回复：", response)
+```text
+我的邻居是：张大明，最喜欢：钓鱼 <class 'str'>
+text='我的邻居是：周杰伦，最喜欢：唱歌' <class 'langchain_core.prompt_values.StringPromptValue'>
+
 ```
 
 ### `ChatPromptTemplate`
 
-> 对话提示词模板
+> 多角色消息模板 + 动态消息列表
 
 ```python
 def demo03():
-    # 定义多角色模板
-    chat_template = ChatPromptTemplate.from_messages([
-        ("system", "你是一个擅长讲冷笑话的AI，每次回答都要讲一个和用户问题相关的冷笑话。"),
-        ("human", "我今天好困啊。"),
-        ("ai", "那你知道为什么困的人不能去爬山吗？因为怕“睡”过头！"),
-        ("human", "{user_input}")
-    ])
+    chat_prompt_template = ChatPromptTemplate.from_messages(
+        [
+            ("system", "你是一个边塞诗人，可以作诗。"),
+            MessagesPlaceholder("history"),
+            ("human", "请再来一首唐诗"),
+        ]
+    )
 
-    # 填充变量
-    prompt = chat_template.format(user_input="我今天好饿啊。")
+    history_data = [
+        ("human", "你来写一个唐诗"),
+        ("ai", "床前明月光，疑是地上霜，举头望明月，低头思故乡"),
+        ("human", "好诗再来一个"),
+        ("ai", "锄禾日当午，汗滴禾下锄，谁知盘中餐，粒粒皆辛苦"),
+    ]
 
-    print(prompt_value)
+    # StringPromptValue    to_string()
+    prompt_text = chat_prompt_template.invoke({"history": history_data}).to_string()
+
+    print(prompt_text)def demo03():
+    chat_prompt_template = ChatPromptTemplate.from_messages(
+        [
+            ("system", "你是一个边塞诗人，可以作诗。"),
+            MessagesPlaceholder("history"),
+            ("human", "请再来一首唐诗"),
+        ]
+    )
+
+    history_data = [
+        ("human", "你来写一个唐诗"),
+        ("ai", "床前明月光，疑是地上霜，举头望明月，低头思故乡"),
+        ("human", "好诗再来一个"),
+        ("ai", "锄禾日当午，汗滴禾下锄，谁知盘中餐，粒粒皆辛苦"),
+    ]
+
+    # StringPromptValue    to_string()
+    prompt_text = chat_prompt_template.invoke({"history": history_data}).to_string()
+
+    print(prompt_text)
 ```
 
-### `SystemMessage + HumanMessage`
+### 使用`vars()`注入对象属性
+
+> vars() 函数：将对象转换为字典后再解包，更加明确和安全
 
 ```python
-def demo04():
-    # 定义多角色模板
-    chat_template = ChatPromptTemplate.from_messages([
-        ("system", "你是{business_domain}的知识助手，名叫{assistant_name}。"),
-        ("system", "你只能基于提供的资料回答，不得超出资料范围。"),
-        ("human", "参考资料：\n{context}\n\n用户问题：{query}"),
-    ])
+    class Person:
+        def __init__(self, lastname, hobby):
+            self.lastname = lastname
+            self.hobby = hobby
 
-    # 填充变量
-    prompt_value = chat_template.invoke({
-        "business_domain": "企业内部制度与流程",
-        "assistant_name": "小知",
-        "context": "[1] 来源：人事制度\n入职流程包括...",
-        "query": "入职需要哪些材料",
-    })
-    
-    print(prompt_value)
+    person = Person("张三", "看电影")
+
+    template = PromptTemplate.from_template("我的邻居是：{lastname}，最喜欢：{hobby}")
+
+    res = template.format(**vars(person))
+    print(res, type(res))
+
+    res2 = template.invoke(vars(person))
+    print(res2, type(res2))
 ```
 
+## 链式调用
 
+> 核心前提：即Runnable子类对象才能入链
+
+```python
+def demo01():
+    """
+    单链
+    :return:
+    """
+    chat_prompt_template = ChatPromptTemplate.from_messages(
+        [
+            ("system", "你是一个边塞诗人，可以作诗。"),
+            MessagesPlaceholder("history"),
+            ("human", "请再来一首唐诗"),
+        ]
+    )
+
+    history_data = [
+        ("human", "你来写一个唐诗"),
+        ("ai", "床前明月光，疑是地上霜，举头望明月，低头思故乡"),
+        ("human", "好诗再来一个"),
+        ("ai", "锄禾日当午，汗滴禾下锄，谁知盘中餐，粒粒皆辛苦"),
+    ]
+
+    model = OllamaLLM(model="qwen2:0.5B")
+
+    # 组成链，要求每一个组件都是Runnable接口的子类
+    chain = chat_prompt_template | model
+
+    # 使用invoke
+    res = chain.invoke({"history": history_data})
+    print(res)
+    
+    # 使用stream
+    for chunk in chain.stream({"history": history_data}):
+        print(chunk, end="", flush=True)
+```
 
 ## 模型输出
 
-模型默认输出的是字符串类型，但是有些场景下需要模型输出的是结构化数据，因此需要使用：`with_structured_output`，使用`pydantic`约束模型的输出类型
+### `StrOutputParser`
+
+```python
+def demo02():
+    parser = StrOutputParser()
+    model = OllamaLLM(model="qwen2.5:7B")
+    prompt = PromptTemplate.from_template(
+        "我姓居姓：{lastname}，刚生了{gender}，请起名，仅告知我名字无需其它内容。"
+    )
+
+    chain = prompt | model | parser
+
+    res = chain.invoke({"lastname": "张", "gender": "女儿"})
+    print(res)
+```
+
+### `JsonOutputParser`
+
+> `JsonOutputParser` + 多步执行链，需要提示词中明确返回`JSON`格式，最好配合少样本使用
+
+```python
+def demo02():
+    # 创建所需的解析器
+    str_parser = StrOutputParser()
+    json_parser = JsonOutputParser()
+
+    # 模型创建
+    model = ChatTongyi(model="qwen3-max")
+
+    # 第一个提示词模板
+    first_prompt = PromptTemplate.from_template(
+        "我姓居姓：{lastname}，刚生了{gender}，请帮忙起名字，"
+        "并封装为JSON格式返回给我。要求key是name，value就是你起的名字，请严格遵守格式要求。"
+    )
+
+    # 第二个提示词模板
+    second_prompt = PromptTemplate.from_template(
+        "姓名：{name}，请帮我解析含义。"
+    )
+
+    # 构造链
+    chain = first_prompt | model | json_parser | second_prompt | model | str_parser
+
+    res = chain.stream({"lastname": "张", "gender": "女儿"})
+
+    for chunk in res:
+        print(chunk)
+```
+
+### 自定义函数
+
+> 简单快捷，返回一个字段，快速实现
+
+```python
+def demo03():
+    str_parser = StrOutputParser()
+    # 第一个提示词模板
+    first_prompt = PromptTemplate.from_template(
+        "我姓居姓：{lastname}，刚生了{gender}，请帮忙起名字，仅告诉我名字，不要额外信息"
+    )
+
+    # 第二个提示词模板
+    second_prompt = PromptTemplate.from_template(
+        "姓名：{name}，请帮我解析含义。"
+    )
+
+    # 模型创建
+    model = ChatTongyi(model="qwen3-max")
+    
+	# 函数的入参：AIMessage -> dict  ({"name": "xxx"})
+    # my_func = RunnableLambda(lambda ai_msg: {"name": ai_msg.content})
+    my_fun = RunnableLambda(lambda ai_msg: {'name': ai_msg.content})
+
+    # 构造链
+    chain = first_prompt | model | my_fun | second_prompt | model | str_parser
+
+    res = chain.stream({"lastname": "张", "gender": "女儿"})
+
+    for chunk in res:
+        print(chunk)
+```
+
+### `with_structured_output + Pydantic` 模型
+
+> 复杂实体抽取，封装为自定义`Pydantic`对象，常用于意图识别
+
+#### 意图识别
+
+```python
+from pydantic import BaseModel, Field
+from typing import Literal
+
+# 定义输出结构
+class IntentLLMDecision(BaseModel):
+    intent: Literal["GREETING", "FAQ_QUERY", "KNOWLEDGE_QUERY",
+                    "FOLLOW_UP", "HUMAN_SERVICE", "OUT_OF_SCOPE"]  # 意图分类
+    confidence: float = Field(default=0.6, ge=0.0, le=1.0)  # 置信度范围0~1之间
+    reason: str = Field(default="")  # 理由
+
+# 创建带结构化输出的模型
+model = get_chat_model(streaming=False)
+structured_model = model.with_structured_output(IntentLLMDecision)
+
+# 调用 — 返回值是 Pydantic 对象，不是字符串
+decision = structured_model.invoke([
+    SystemMessage(content="你是意图识别助手..."),
+    HumanMessage(content="用户问：入职流程有哪些步骤？"),
+])
+
+print(decision.intent)      # "KNOWLEDGE_QUERY"
+print(decision.confidence)  # 0.85
+print(decision.reason)      # "用户询问企业流程制度类问题"
+```
+
+#### 封装自定义`Pydantic`对象
+
+```python
+def demo04():
+    model = ChatTongyi(model="qwen3-max")
+
+    class NameResult(BaseModel):
+        name: str = Field(description="起好的姓名")
+        meaning: str = Field(description="姓名含义")
+
+    structured_model = model.with_structured_output(NameResult)
+
+    prompt = PromptTemplate.from_template(
+        "我姓：{lastname}，刚生了{gender}，请起一个名字，并解释含义。"
+    )
+
+    chain = prompt | structured_model
+
+    res = chain.invoke({
+        "lastname": "张",
+        "gender": "女儿",
+    })
+    print(res)
+    print(type(res))
+```
+
+#### 多步执行链
+
+```python
+def demo04():
+    model = ChatTongyi(model="qwen3-max")
+
+    class NameResult(BaseModel):
+        name: str = Field(description="起好的姓名")
+        meaning: str = Field(description="姓名含义")
+
+    structured_model = model.with_structured_output(NameResult)
+
+    # 第一个提示词模板
+    first_prompt = PromptTemplate.from_template(
+        "我姓居姓：{lastname}，刚生了{gender}，请帮忙起名字，仅告诉我名字，不要额外信息"
+    )
+
+    # 第二个提示词模板
+    second_prompt = PromptTemplate.from_template(
+        "姓名：{name}，请帮我解析含义。"
+    )
+
+    chain = first_prompt | structured_model | second_prompt | model | StrOutputParser()
+
+    res = chain.invoke({
+        "lastname": "张",
+        "gender": "女儿",
+    })
+    print(res)
+    print(type(res))
+```
 

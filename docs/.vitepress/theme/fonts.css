@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "LXGW WenKai";
+  src: url("./fonts/LXGWWenKai-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: CascadiaCode;
+  src: url("./fonts/Cascadia-Code-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --vp-font-family-base: Optima-Regular, Optima, "LXGW WenKai", PingFangSC-light,
+    PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times,
+    "Times New Roman", serif;
+  --vp-font-family-mono: CascadiaCode, "Lucida Console", Consolas, Courier,
+    monospace;
+}
