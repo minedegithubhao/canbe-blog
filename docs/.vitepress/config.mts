@@ -28,10 +28,10 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
+      { text: "AI 专栏", link: "/大模型/01大模型应用开发的起点" },
       { text: "后端", link: "/后端/" },
       { text: "前端", link: "/前端/" },
       { text: "工程实践", link: "/工程实践/" },
-      { text: "AI 专栏", link: "/大模型/01大模型应用开发的起点" },
       { text: "个人简历", link: "/个人简历/个人简历" },
     ],
 
