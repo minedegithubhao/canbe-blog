@@ -1,4 +1,6 @@
-# Model（模型）
+# langchain介绍
+
+
 
 ## 模型接入
 
@@ -590,3 +592,219 @@ def demo04():
     print(type(res))
 ```
 
+## 会话记忆
+
+### `ChatMessageHistory`
+
+> 自定义存储方式
+
+```python
+import json
+
+from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_core.messages import messages_to_dict, messages_from_dict
+
+
+def demo01():
+    # 1、创建ChatMessageHistory -> add_user_message, add_ai_message（内存）
+    history = ChatMessageHistory(session_id="test_session")
+    history.add_user_message("你好在吗？")
+    history.add_ai_message("你好，我在")
+    print(history.messages)
+    # 2、message_to_dict()  ->  转为python字典  ->  json序列化保存（文件）
+    dicts = messages_to_dict(history.messages)
+    print(dicts)
+    with open("history.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(dicts, ensure_ascii=False))  # ensure_ascii=False 保存为中文而不是"\uf29F"
+    
+    # 3、json.load()  ->  message_from_dict()  ->  还原为message对象
+    messages = json.load(open("history.json", "r", encoding="utf-8"))
+    chat_history = messages_from_dict(messages)
+    print(f'chat_history.messages： {messages}')
+```
+
+### `SqlChatMessageHistory`
+
+> 将对话历史存储到关系型数据库中
+
+```python
+def history_from_session(session_id: str):
+    """
+        SQLChatMessageHistory的作用
+        1、自动创建数据表、
+        2、add_message() 自动序列化message -> Insert
+        3、.message() 自动select -> 反序列化为Lang Message对象
+        4、所有的操作按照session_id过滤
+    """
+    from sqlalchemy import create_engine, text
+
+    engine = create_engine(MYSQL_CONNECTION_URL)
+
+    history = SQLChatMessageHistory(
+        session_id=session_id,
+        connection=engine,
+        table_name="chat_message_history"
+    )
+
+    return history
+
+
+def demo02():
+    # 创建2各不同的会话
+    session_1 = history_from_session("session_1")
+    session_2 = history_from_session("session_2")
+
+    # 清空旧数据（表中有历史数据则清除）
+    session_1.clear()
+    session_2.clear()
+
+    session_1.add_user_message("你好在吗？")
+    session_1.add_ai_message("你好，我在")
+
+    session_2.add_user_message("你叫什么名字？")
+    session_2.add_ai_message("我叫LangChain")
+
+    # 会话A的对话历史
+    print(f'session_1.messages： {session_1.messages}')
+    # 会话B的会话历史
+    print(f'session_2.messages： {session_2.messages}')
+```
+
+### 常用API
+
+- `add_message(HumanMessage(content="..."))`
+- `add_message(AIMessage(content="..."))`
+- `add_user_message(content="...")`
+- `add_ai_message(content="...")`
+- `messages_to_dict()` 将数据保存为字典，方便后续保存
+- `messages_from_dict()` 将数据还原为`Message`对象
+
+## 文档加载
+
+### `TextLoader`
+
+> 常用于`.txt` `.md`
+
+```python
+from langchain_community.document_loaders import TextLoader
+loader = TextLoader("data/onboarding.md", encoding="utf-8")
+docs = loader.load()
+```
+
+### `UnstructuredLoader`
+
+> 兼容所有文档，支持`OCR`
+
+```python
+from langchain_unstructured import UnstructuredLoader
+loader = UnstructuredLoader("./data/衣服属性.txt", encoding="utf-8")
+data = loader.load()
+```
+
+### `PyPDFLoader`
+
+用于PDF类文件
+
+```python
+from langchain_community.document_loaders import PyPDFLoader
+loader = PyPDFLoader("data/hr_policy.pdf")
+docs = loader.load()  # 每页一个 Document
+```
+
+### `Docx2txtLoader`
+
+用于新版 Word `.docx`, 不支持❌旧版二进制 `.doc`
+
+```python
+from langchain_community.document_loaders import Docx2txtLoader
+loader = Docx2txtLoader("data/contract.docx")
+docs = loader.load()
+```
+
+### `CSVLoader`
+
+用于`CSV`
+
+```python
+from langchain_community.document_loaders import CSVLoader
+loader = CSVLoader("data/employees.csv")
+docs = loader.load()
+```
+
+## 文档切分
+
+### `RecursiveCharacterTextSplitter`
+
+- 中文名：递归降级切分器
+- 切分方式：结构+长度
+- 核心思想：优先按照结构切割，段落太长再按照句子/换行符/空格切分，最后可以保证chunk不会超过设定的大小
+- 优点：快、稳定、可控
+
+```python
+CHINESE_SEPARATORS = [
+        "\n\n", "\n",  # 段落 → 换行
+        "！", "？", "；",  # 句子
+        "，",  # 短语
+        " ",  # 词
+        "",  # 字符（最后手段）
+    ]
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500, # 每个块最多30个字符
+    chunk_overlap=50, # 相邻块重叠6个字符
+    separators=CHINESE_SEPARATORS # 切分策略优先级：段落-》换行-》句号....
+)
+```
+
+### `SemanticChunker `
+
+- 中文名：语义相似度切分
+- 切分方式：语义变化
+- 核心思想：将文本拆分成句子，再用embedding模型判断相邻两个句子的语义相似度，大于阈值就切开
+- 优点：能够更自然的识别“话题的边界”
+- 缺点：chunk大小不可控
+
+```python
+embedding = OllamaEmbeddings(model = "bge-m3")
+text_splitter = SemanticChunker(
+    embeddings=embedding,
+    breakpoint_threshold_type='percentile', # 按照百分位阈值
+    breakpoint_threshold_amount=80,         # 语义相似度阈值，越低-> 切得越积极(chunk_size越小)
+    sentence_split_regex = r"(?<=[。？！.?!])\s+",  # 中英文句子分割正则表达式都支持
+    min_chunk_size=10,
+)
+```
+
+### `MarkdownHeaderTextSplitter`
+
+- 中文名：Markdown 标题层级切分
+- 切分方式：层级结构
+- 核心思想：识别 Markdown 层级标题 `#、##、###……` 作为天然分割边界
+- 优点：自动保留文档层级结构
+
+```python
+headers = [
+        ("#", "h1"),
+        ("##", "h2"),
+        ("###", "h3")
+    ]
+spliter = MarkdownHeaderTextSplitter(headers)
+text = """
+            # 人工智能正在快速发展，尤其是大语言模型的应用，正在改变人类的工作方式。\n
+            ## 它们可以帮助人们进行写作、代码生成、甚至是科研探索。\n
+            ### 相比之下，新能源的发展同样重要。电动车和太阳能正在逐渐替代传统能源，减少碳排放，对全球环境保护至关重要。\n
+        """
+split_text = spliter.split_text(text)
+print(f'split_text： {split_text}')
+```
+
+### 面试题为什么`RAG`选择`RecursiveCharacterTextSplitter` 而不是 `SemanticChunker`
+
+RAG在构建时往往文档数量较大、追求命中准确，结果稳定。
+
+- `SemanticChunker` 额外调用 Embedding 模型，算力、耗时、成本大幅上升
+- `SemanticChunker` 分片长度完全不可控，出现超长Chunk，易引起语义稀释
+- `SemanticChunker` 依赖语义，不稳定，带来调参困难
+
+一版来说结构清晰我们选择递归切分，例如：企业规章制度、操作手册、表格数据、合同条款等等
+
+强调语义清晰选择语义切分，例如：会议纪要、访谈、长报告等等
