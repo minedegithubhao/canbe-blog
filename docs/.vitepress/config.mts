@@ -184,12 +184,12 @@ export default defineConfig({
           ],
         },
         {
-          text: "langchain",
+          text: "RAG核心技术",
           items: [
-            {
-              text: "栏目导读",
-              link: "/大模型/langchain/",
-            },
+            // {
+            //   text: "栏目导读",
+            //   link: "/大模型/langchain/index.md",
+            // },
             {
               text: "API_KEY配置",
               link: "/大模型/langchain/API_KEY环境变量配置.md",
