@@ -198,6 +198,10 @@ export default defineConfig({
               text: "langchain生态系统",
               link: "/大模型/langchain/langchain生态系统.md",
             },
+            {
+              text: "Milvus向量数据库",
+              link: "/大模型/langchain/Milvus向量数据库.md",
+            },
           ],
         },
       ],
