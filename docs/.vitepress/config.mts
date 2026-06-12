@@ -195,8 +195,8 @@ export default defineConfig({
               link: "/大模型/langchain/API_KEY环境变量配置.md",
             },
             {
-              text: "langchain入门到精通",
-              link: "/大模型/langchain/langchain入门到精通.md",
+              text: "langchain生态系统",
+              link: "/大模型/langchain/langchain生态系统.md",
             },
           ],
         },
