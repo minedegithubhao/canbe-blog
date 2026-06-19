@@ -75,11 +75,29 @@ IVF_PQ（乘积量化）：
 
 ### `HNSW` —  图索引
 
-核心思想：类树形的图索引，主干快速定位，叶子节点暴力检索。主要有如下3个参数：
+图索引： **Hierarchical Navigable Small World**—分层可导航小世界图
 
-- `M`：每个节点最大同层连接数，越大连通性越好，召回率更高，但内存和耗时上升，常规取值 `12~32`，`Milvus`，默认推荐 `M=16`。
-- `efc / efConstruction`: 构建时搜索宽度，越大筛选更优质的近邻边，索引质量更好，但构建更慢，常用 `efConstruction=200`。
-- `ef / efSearch`：查询时搜索宽度，遍历候选节点数，越大找到真实 `TopK`近邻的概率更高，召回效果更好，但计算次数变多，查询延迟升高，`QPS`下降，常用 `32~128`，`efSearch` 必须 ≥ 业务查询的 `TopK`
+> HNSW 建图时，会先规定每个城市最多保留 `M` 条重要高速连接。
+> 但这些连接不是随便挑的，而是先在一个更大的候选范围里比较，`efConstruction` 决定建图时愿意考察多少个候选城市。
+> 到了查询阶段，系统不会只沿一条高速路一直开，而是同时维护一批最有希望的候选城市继续搜索，`efSearch` 决定这批候选城市的规模。
+
+`M` 主要影响**图结构复杂度**，默认推荐 `M=16`，影响：
+
+- 构图时间
+- 内存占用
+- 检索效果
+
+`efc/efConstruction` 主要影响**建图时邻居选择是否充分**，常用 `efConstruction=200`，影响：
+
+- 构图时间
+- 图质量
+- 后续检索召回
+
+`efs/efSearch` 主要影响**查询时搜索是否充分**，，常用 `32~128`,影响：
+
+- 检索延迟
+- 召回率
+- 近似结果质量
 
 ### 索引选型
 
@@ -294,5 +312,31 @@ def milvus_vectorstore():
 
 if __name__ == '__main__':
     milvus_vectorstore()
+```
+
+**字段说明**
+
+- `enable_dynamic_field=True`：允许动态添加字段,如果不允许那么metadata里面的每个属性单位成为列
+
+![image-20260619152037080](Milvus向量数据库.assets/image-20260619152037080.png)
+
+- `auto_id=False`：关闭自动创建id,需手动指定id列表
+
+![image-20260619152328203](Milvus向量数据库.assets/image-20260619152328203.png)
+
+- `auto_id=True`：自动创建id
+
+![image-20260619152516041](Milvus向量数据库.assets/image-20260619152516041.png)
+
+### 动态字段如何使用
+
+动态字段通过**`expr` 过滤表达式** 来筛选
+
+```python
+result = store.similarity_search_with_score(
+    "入职需要哪些流程？",
+    k=2,
+    expr='source == "hr" and doc_id == "hr_001"'
+)
 ```
 
