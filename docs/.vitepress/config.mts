@@ -32,6 +32,7 @@ export default defineConfig({
       { text: "后端", link: "/后端/" },
       { text: "前端", link: "/前端/" },
       { text: "工程实践", link: "/工程实践/" },
+      { text: "面试专栏", link: "/面试专栏/从五大角度完成对项目的理解" },
       { text: "个人简历", link: "/个人简历/个人简历" },
     ],
 
@@ -164,6 +165,25 @@ export default defineConfig({
           ],
         },
       ],
+      "/面试专栏/": [
+        {
+          text: "面试专栏",
+          items: [
+            {
+              text: "从五大角度完成对项目的理解",
+              link: "/面试专栏/从五大角度完成对项目的理解.md",
+            },
+            {
+              text: "五大面试答题提示词",
+              link: "/面试专栏/五大面试答题提示词.md",
+            },
+            {
+              text: "项目自述 面试官深挖提问侧重点+高频考题",
+              link: "/面试专栏/项目自述 面试官深挖提问侧重点+高频考题.md",
+            }
+          ]
+        }
+      ],
       "/大模型/": [
         {
           text: "AI 专栏",
@@ -201,6 +221,20 @@ export default defineConfig({
             {
               text: "Milvus向量数据库",
               link: "/大模型/langchain/Milvus向量数据库.md",
+            },
+          ],
+        },
+        {
+          text: "FastAPI",
+          items: [
+            
+            {
+              text: "FastAPI基础",
+              link: "/大模型/FastAPI/FastAPI基础.md",
+            },
+            {
+              text: "企业级FastAPI项目",
+              link: "/大模型/FastAPI/企业级FastAPI项目.md",
             },
           ],
         },
