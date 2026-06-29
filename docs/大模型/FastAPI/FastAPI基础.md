@@ -175,3 +175,58 @@ def stream_query(...) -> Generator[dict, None, None]:
 generator = await asyncio.to_thread(lambda: service.stream_query(...))
 ```
 
+## 在异步里跑同步阻塞代码
+
+```python
+import asyncio
+import time
+
+def heavy_sync_work(n):              # 一个阻塞的同步函数（模拟本地模型推理）
+    print("同步重活开始……")
+    time.sleep(2)                    # 故意阻塞 2 秒
+    print("同步重活结束")
+    return n * n
+
+async def main():
+    loop = asyncio.get_running_loop()        # 拿到当前事件循环
+    # 第一个参数 None 表示用默认线程池；后面依次是「要执行的函数」和「它的参数」
+    result = await loop.run_in_executor(None, heavy_sync_work, 10)
+    print("结果：", result)
+
+asyncio.run(main())
+```
+
+固定套路
+
+```text
+loop = asyncio.get_running_loop()
+结果 = await loop.run_in_executor(None, 同步函数, 参数1, 参数2, ...)
+```
+
+##  后台任务
+
+```python
+import asyncio
+
+# 模块级集合：持有所有后台任务的强引用，防止被 GC 提前回收
+_background_tasks: set[asyncio.Task] = set()
+
+async def grade_exam(exam_id):
+    print(f"开始批改试卷 {exam_id}……")
+    await asyncio.sleep(2)               # 模拟耗时的批改过程
+    print(f"试卷 {exam_id} 批改完成")
+
+async def submit():
+    task = asyncio.create_task(grade_exam("EX-001"))  # 丢到后台
+    _background_tasks.add(task)                         # 关键①：强引用，防 GC
+    task.add_done_callback(_background_tasks.discard)   # 关键②：跑完自动移除
+    print("接口立即返回：已收到，正在后台批改")
+
+async def main():
+    await submit()
+    await asyncio.sleep(3)    # 模拟服务持续运行，给后台任务跑完的时间
+    print("当前后台任务数：", len(_background_tasks))
+
+asyncio.run(main())
+```
+

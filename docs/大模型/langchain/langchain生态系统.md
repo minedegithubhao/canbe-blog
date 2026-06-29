@@ -87,9 +87,27 @@ def demo04():
     print(f'r2 : {r2}')
 ```
 
+### init_chat_model（推荐）
+
+```python
+from langchain.chat_models import init_chat_model
+
+def demo05():
+    llm = init_chat_model(
+        model=os.getenv("MODEL"),  # 模型名称
+        model_provider="openai",  # 走 OpenAI 兼容协议（关键）
+        api_key=os.getenv("OPENAI_API_KEY"),  # DeepSeek 的 API Key
+        base_url="https://api.deepseek.com/v1",  # DeepSeek 接口地址（关键）
+        temperature=0,  # 输出的随机性，0 = 最稳定
+    )
+    prompt = "给我讲个笑话，100字？"
+    result = llm.invoke(prompt)
+    print(result)
+```
+
 ## 模型交互
 
-### invoke
+### invoke（同步）
 
 单个输入 -> 完整输出（同步）
 
@@ -110,7 +128,35 @@ def demo01():
     print(result)
 ```
 
-### stream
+### ainvoke（异步）
+
+```python
+import asyncio
+from langchain.chat_models import init_chat_model
+from langchain_core.messages import SystemMessage, HumanMessage
+
+llm = init_chat_model(
+    model="deepseek-chat",
+    model_provider="openai",
+    api_key="sk-你的DeepSeekKey",
+    base_url="https://api.deepseek.com/v1",
+    temperature=0,
+)
+
+async def main():
+    messages = [
+        SystemMessage(content="你是一位专业的 Python 讲师，用一句话回答。"),
+        HumanMessage(content="什么是装饰器？"),
+    ]
+    response = await llm.ainvoke(messages)    # 异步调用，返回一个 AIMessage
+    print(response.text)                       # 用 .text 取出文本（属性，不加括号！）
+
+asyncio.run(main())
+```
+
+
+
+### stream（同步）
 
 单个输入 -> 逐token流式输出（异步）
 
@@ -134,6 +180,19 @@ def demo02():
     for chunk in result:
         print(chunk.content, end="", flush=True)
 ```
+
+### astream（异步）
+
+```python
+async def main():
+    messages = [HumanMessage(content="用三句话介绍一下 Python。")]
+    async for chunk in llm.astream(messages):   # 逐块接收
+        print(chunk.text, end="", flush=True)    # 拼接打印，形成打字机效果
+
+asyncio.run(main())
+```
+
+
 
 ### batch
 
@@ -542,7 +601,7 @@ def demo04():
         name: str = Field(description="起好的姓名")
         meaning: str = Field(description="姓名含义")
 
-    structured_model = model.with_structured_output(NameResult)
+    structured_model = model.with_structured_output(NameResult,method="function_calling")  # 把模型绑定上去，得到一个「结构化输出版」的 llm
 
     prompt = PromptTemplate.from_template(
         "我姓：{lastname}，刚生了{gender}，请起一个名字，并解释含义。"

@@ -219,6 +219,10 @@ export default defineConfig({
               link: "/大模型/langchain/langchain生态系统.md",
             },
             {
+              text: "langGraph介绍",
+              link: "/大模型/langGraph介绍.md",
+            },
+            {
               text: "Milvus向量数据库",
               link: "/大模型/langchain/Milvus向量数据库.md",
             },
@@ -235,6 +239,20 @@ export default defineConfig({
             {
               text: "企业级FastAPI项目",
               link: "/大模型/FastAPI/企业级FastAPI项目.md",
+            },
+            {
+              text: "Pydantic介绍",
+              link: "/大模型/FastAPI/Pydantic介绍.md",
+            },
+          ],
+        },
+        {
+          text: "Agent",
+          items: [
+            
+            {
+              text: "Agent基础",
+              link: "/大模型/Agent/Agent基础.md",
             },
           ],
         },
