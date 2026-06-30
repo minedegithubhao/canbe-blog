@@ -1,0 +1,10 @@
+{
+  "drawioMode": "offline",
+  "customDrawioUrl": "",
+  "serverPortMin": 3000,
+  "serverPortMax": 3999,
+  "serverIdleTimeout": 300,
+  "followObsidianTheme": true,
+  "showLibraries": true,
+  "storeFormat": "xml"
+}
