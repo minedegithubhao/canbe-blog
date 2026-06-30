@@ -64,6 +64,17 @@ class UserProfile(BaseModel):
 
 info = {"name": "小明", "phone": "12345678901", "age": 18}
 user = UserProfile(**info)
+
+# r1 = {
+#     "name": "小明",
+#     "education": [
+#         {"school": "清华大学", "major": "计算机"},
+#         {"school": "北京大学", "major": "软件工程"},
+#     ],
+# }
+# resume = Resume(**r1)
+# print(resume)
+
 print(type(info))  # <class 'dict'>
 print(user)  # name='小明' phone='12345678901' age=18
 ```
@@ -227,6 +238,7 @@ print(u)  # ValidationError
 class UserProfile(BaseModel):
     name: str = Field(description="用户姓名")  # 必填：没有默认值
     phones: list[str] = Field(default_factory=list, description="手机号列表")  # 可选：有默认值 ""
+    attr: dict[str, str] = Field(default_factory=dict, description="属性字段")
 
     @field_validator("phones")
     @classmethod
@@ -271,6 +283,12 @@ class InterviewStage(str, Enum):       # 继承 str，取值就是字符串
 
 print(InterviewStage.WARMUP)           # InterviewStage.WARMUP
 print(InterviewStage.WARMUP.value)     # warmup
+
+if InterviewStage.WARMUP == "warmup":  # 你好
+    print("你好")
+
+if InterviewStage.WARMUP.value == "warmup":  # 你好
+    print("你好")
 ```
 
 ### BaseSettings

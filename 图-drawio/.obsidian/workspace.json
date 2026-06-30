@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "大模型开发.drawio"
+                "file": "RAG/RAG全景.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "大模型开发"
+              "title": "RAG全景"
             }
           }
         ]
@@ -180,7 +180,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a036519e760d519b",
+  "active": "7f45aef06c3a3014",
   "lastOpenFiles": [
     "大模型开发.drawio",
     "RAG/RAG全景.drawio",
