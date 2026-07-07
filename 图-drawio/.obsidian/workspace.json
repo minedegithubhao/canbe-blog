@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f235d77c2d6c536e",
+        "id": "2a41e2c7295f529d",
         "type": "tabs",
         "children": [
           {
-            "id": "7f45aef06c3a3014",
+            "id": "066a22b5991b9f55",
             "type": "leaf",
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "RAG/RAG全景.drawio"
+                "file": "大模型开发.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "RAG全景"
+              "title": "大模型开发"
             }
           }
         ]
@@ -180,22 +180,44 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "7f45aef06c3a3014",
+  "active": "066a22b5991b9f55",
   "lastOpenFiles": [
-    "大模型开发.drawio",
     "RAG/RAG全景.drawio",
-    "RAG/版本管理.drawio",
-    "Agent",
-    "Excalidraw/Drawing 2026-06-30 14.18.33.excalidraw.md",
-    "RAG",
     "未命名.canvas",
-    "Excalidraw",
+    "技术面试题_细粒度高频考点.md",
+    "大模型开发.drawio",
+    "RAG/版本管理.drawio",
+    "Agent/Agent.drawio",
+    "面试题/面试题/阿里淘天AI应用研发一面面经整理.md",
+    "面试题/面试题/超细技术题整理/技术面试题_细粒度高频索引.md",
+    "面试题/面试题/超细技术题整理/技术面试题_细粒度高频考点.md",
+    "面试题/面试题/西安AI大模型2期整理/技术题/技术面试题_高频索引.md",
+    "面试题/面试题/西安AI大模型2期整理/技术题/技术面试题_原始题目汇总.md",
+    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频索引.md",
+    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md",
+    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_高频汇总.md",
+    "面试题/技术面试题_细粒度高频索引.md",
+    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频索引.md.bak_before_add_categories",
+    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md.bak_before_add_categories",
+    "面试题/__MACOSX/面试题/西安AI大模型2期整理/人际题",
+    "面试题/__MACOSX/面试题/西安AI大模型2期整理/技术题",
+    "面试题/面试题/超细技术题整理/技术面试题_细粒度高频考点.md.bak_before_add_categories",
+    "面试题/面试题/超细技术题整理/技术面试题_细粒度高频索引.md.bak_before_add_categories",
+    "面试题/面试题/Attention与Transformer面试题_40题.md",
+    "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_高频索引.md",
+    "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_原始题目汇总.md",
+    "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_高频汇总.md",
+    "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频索引.md",
+    "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md",
+    "面试题(1)/面试题/超细技术题整理/技术面试题_细粒度高频考点.md",
+    "面试题(1)/面试题/超细技术题整理/技术面试题_细粒度高频索引.md",
+    "面试题(1)/面试题/阿里淘天AI应用研发一面面经整理.md",
+    "面试题(1)/面试题/Attention与Transformer面试题_40题.md",
+    "面试题/技术面试题_细粒度高频考点.md",
+    "面试题/人际面试题_高频汇总.md",
+    "Agent/Agent.drawio.md",
+    "Excalidraw/Drawing 2026-06-30 14.18.33.excalidraw.md",
     "2026-06-30.md",
-    "未命名.base",
-    "1.md.md",
-    "未命名.md",
-    "未命名 2.base",
-    "未命名 1.base",
     "未命名 1.canvas"
   ]
 }
