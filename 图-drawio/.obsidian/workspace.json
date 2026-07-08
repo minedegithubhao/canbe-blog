@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "Agent/Agent项目.drawio"
+                "file": "Agent/零售行业Agent.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "Agent项目"
+              "title": "零售行业Agent"
             }
           }
         ]
@@ -182,8 +182,8 @@
   },
   "active": "066a22b5991b9f55",
   "lastOpenFiles": [
-    "Agent/零售行业Agent.drawio",
     "Agent/Agent项目.drawio",
+    "Agent/零售行业Agent.drawio",
     "Agent/新建 文本文档.txt",
     "Agent/Agent.drawio",
     "Excalidraw/Drawing 2026-07-08 11.17.39.excalidraw.md",
