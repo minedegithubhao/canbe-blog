@@ -1,0 +1,291 @@
+<mxfile host="embed.diagrams.net" agent="Codex">
+  <diagram id="eduagent-orchestrator-flow" name="EduAgent编排者与四个Agent流程图">
+    <mxGraphModel dx="4415" dy="3220" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=28;fontStyle=1;fontColor=#111827;" value="EduAgent 多 Agent 编排流程图" vertex="1">
+          <mxGeometry height="44" width="800" x="535" y="-630" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontColor=#4B5563;" value="统一入口负责听懂用户意图；Orchestrator 负责派活、懒加载 Agent 图、单 Agent 直达或多 Agent 串联；每个业务 Agent 内部都是一张受控 LangGraph 工作流。" vertex="1">
+          <mxGeometry height="36" width="1260" x="305" y="-570" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EEF2FF;strokeColor=#4F46E5;fontSize=16;fontStyle=1;fontColor=#111827;" value="用户一句话" vertex="1">
+          <mxGeometry height="64" width="150" x="840" y="-424" as="geometry" />
+        </mxCell>
+        <mxCell id="unified" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2FE;strokeColor=#0284C7;fontSize=14;fontColor=#0F172A;" value="统一入口&lt;br&gt;&lt;b&gt;unified_chat.py&lt;/b&gt;&lt;br&gt;收请求 / 推 SSE" vertex="1">
+          <mxGeometry height="84" width="190" x="820" y="-300" as="geometry" />
+        </mxCell>
+        <mxCell id="prefilter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#059669;fontSize=13;fontColor=#0F172A;" value="规则前置拦截&lt;br&gt;问候 / 感谢 / 再见 / 身份 / 能力&lt;br&gt;命中则零 Token 回复" vertex="1">
+          <mxGeometry height="92" width="230" x="800" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="route" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;fontSize=13;fontColor=#0F172A;" value="LLM 意图路由&lt;br&gt;DeepSeek / temperature=0&lt;br&gt;输出 JSON 标签，失败降级 qa" vertex="1">
+          <mxGeometry height="92" width="230" x="800" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;fontSize=13;fontColor=#0F172A;" value="路由分支&lt;br&gt;qa / resume / exam / interview&lt;br&gt;multi_agent / clarify" vertex="1">
+          <mxGeometry height="120" width="200" x="810" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="orch" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E8FF;strokeColor=#7E22CE;fontSize=15;fontStyle=1;fontColor=#111827;" value="编排者 Orchestrator&lt;br&gt;&lt;b&gt;core/orchestrator.py&lt;/b&gt;&lt;br&gt;handle(AgentRequest)&lt;br&gt;单 Agent 直达 / Pipeline 串联" vertex="1">
+          <mxGeometry height="108" width="280" x="765" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="modeSingle" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;dashed=1;fontSize=13;fontColor=#334155;" value="单 Agent 直达&lt;br&gt;_run_single_agent + with_retry&lt;br&gt;按 agent_type 调对应图" vertex="1">
+          <mxGeometry height="84" width="270" x="1160" y="402" as="geometry" />
+        </mxCell>
+        <mxCell id="modePipeline" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#64748B;dashed=1;fontSize=13;fontColor=#334155;" value="多 Agent 串联 Pipeline&lt;br&gt;前序 structured 输出注入后序 context&lt;br&gt;结果按 step_N 聚合" vertex="1">
+          <mxGeometry height="90" width="290" x="360" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-unified" edge="1" parent="1" source="user" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#475569;" target="unified" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-unified-prefilter" edge="1" parent="1" source="unified" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#475569;" target="prefilter" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-prefilter-route" edge="1" parent="1" source="prefilter" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#475569;fontSize=12;" target="route" value="未命中">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-route-decision" edge="1" parent="1" source="route" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#475569;" target="decision" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-decision-orch" edge="1" parent="1" source="decision" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#7E22CE;fontSize=12;" target="orch" value="agent_type / pipeline_key">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-orch-single" edge="1" parent="1" source="orch" style="endArrow=none;html=1;rounded=0;dashed=1;strokeColor=#64748B;" target="modeSingle" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-orch-pipeline" edge="1" parent="1" source="orch" style="endArrow=none;html=1;rounded=0;dashed=1;strokeColor=#64748B;" target="modePipeline" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-orch-resume" edge="1" parent="1" source="orch" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#059669;fontSize=12;" target="resumeBox" value="resume">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-orch-qa" edge="1" parent="1" source="orch" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#2563EB;fontSize=12;" target="qaBox" value="qa">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-orch-exam" edge="1" parent="1" source="orch" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#E11D48;fontSize=12;" target="examBox" value="exam">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-orch-interview" edge="1" parent="1" source="orch" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#C026D3;fontSize=12;" target="interviewBox" value="interview">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1b" edge="1" parent="1" source="pipe1" style="endArrow=block;html=1;rounded=0;dashed=1;strokeWidth=2;strokeColor=#059669;fontSize=12;" target="i1" value="resume_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2a" edge="1" parent="1" source="e8" style="endArrow=block;html=1;rounded=0;dashed=1;strokeWidth=2;strokeColor=#2563EB;" target="pipe2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="280" width="790" x="2000" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="examBox" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF1F2;strokeColor=#F43F5E;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="280" width="790" as="geometry" />
+        </mxCell>
+        <mxCell id="examTitle" parent="2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;fontColor=#BE123C;" value="培训测评 Agent（exam / 第 6 章）" vertex="1">
+          <mxGeometry height="30" width="420" x="25" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="examPattern" parent="2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#E11D48;" value="范式：三轨并行评分 + Human-in-the-Loop 中断/恢复 + 合并发布" vertex="1">
+          <mxGeometry height="24" width="600" x="25" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=13;" value="Word 解析" vertex="1">
+          <mxGeometry height="56" width="105" x="35" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=13;" value="题目元数据&lt;br&gt;加载" vertex="1">
+          <mxGeometry height="56" width="110" x="170" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=12;" value="客观题&lt;br&gt;规则引擎" vertex="1">
+          <mxGeometry height="50" width="110" x="325" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=12;" value="简答题&lt;br&gt;LLM 评分" vertex="1">
+          <mxGeometry height="50" width="110" x="325" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=12;" value="代码题&lt;br&gt;评估" vertex="1">
+          <mxGeometry height="50" width="110" x="325" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=13;" value="三轨汇总" vertex="1">
+          <mxGeometry height="56" width="105" x="490" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F43F5E;fontSize=13;" value="老师确认&lt;br&gt;HitL" vertex="1">
+          <mxGeometry height="56" width="105" x="625" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" parent="2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE4E6;strokeColor=#E11D48;fontSize=12;fontColor=#881337;" value="合并决策&lt;br&gt;发布" vertex="1">
+          <mxGeometry height="56" width="105" x="625" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ee12" edge="1" parent="2" source="e1" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee23" edge="1" parent="2" source="e2" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee24" edge="1" parent="2" source="e2" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee25" edge="1" parent="2" source="e2" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee36" edge="1" parent="2" source="e3" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee46" edge="1" parent="2" source="e4" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee56" edge="1" parent="2" source="e5" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee67" edge="1" parent="2" source="e6" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;" target="e7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ee78" edge="1" parent="2" source="e7" style="endArrow=block;html=1;rounded=0;strokeColor=#E11D48;fontSize=11;" target="e8" value="确认后">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="3" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="280" width="790" x="-980" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="interviewBox" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FDF4FF;strokeColor=#D946EF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="280" width="790" as="geometry" />
+        </mxCell>
+        <mxCell id="interviewTitle" parent="3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;fontColor=#A21CAF;" value="面试评估 Agent（interview / 第 7 章）" vertex="1">
+          <mxGeometry height="30" width="460" x="25" y="11" as="geometry" />
+        </mxCell>
+        <mxCell id="interviewPattern" parent="3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#C026D3;" value="范式：状态机控制 + 上下文加载 + Think 工具 + SSE 多轮对话" vertex="1">
+          <mxGeometry height="24" width="620" x="25" y="41" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D946EF;fontSize=12;" value="会话初始化&lt;br&gt;上下文加载" vertex="1">
+          <mxGeometry height="58" width="118" x="40" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="i2" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D946EF;fontSize=12;" value="阶段推进&lt;br&gt;状态机控制" vertex="1">
+          <mxGeometry height="58" width="118" x="198" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="i3" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D946EF;fontSize=12;" value="回答质量评估&lt;br&gt;Think 工具" vertex="1">
+          <mxGeometry height="58" width="118" x="356" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="i4" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D946EF;fontSize=12;" value="面试官回应&lt;br&gt;生成" vertex="1">
+          <mxGeometry height="58" width="118" x="514" y="111" as="geometry" />
+        </mxCell>
+        <mxCell id="i5" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D946EF;fontSize=12;" value="面试报告&lt;br&gt;生成" vertex="1">
+          <mxGeometry height="58" width="118" x="198" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="i6" parent="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAE8FF;strokeColor=#C026D3;fontSize=12;fontColor=#701A75;" value="结果持久化&lt;br&gt;记忆保存" vertex="1">
+          <mxGeometry height="58" width="118" x="356" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="ei12" edge="1" parent="3" source="i1" style="endArrow=block;html=1;rounded=0;strokeColor=#C026D3;" target="i2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ei23" edge="1" parent="3" source="i2" style="endArrow=block;html=1;rounded=0;strokeColor=#C026D3;" target="i3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ei34" edge="1" parent="3" source="i3" style="endArrow=block;html=1;rounded=0;strokeColor=#C026D3;" target="i4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ei42" edge="1" parent="3" source="i4" style="endArrow=block;html=1;rounded=0;dashed=1;strokeColor=#C026D3;fontSize=11;" target="i2" value="多轮推进">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="573" y="76" />
+              <mxPoint x="257" y="76" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ei25" edge="1" parent="3" source="i2" style="endArrow=block;html=1;rounded=0;strokeColor=#C026D3;fontSize=11;" target="i5" value="面试结束">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ei56" edge="1" parent="3" source="i5" style="endArrow=block;html=1;rounded=0;strokeColor=#C026D3;" target="i6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qaBox" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="250" width="790" x="990" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="qaTitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;fontColor=#1D4ED8;" value="企业知识问答 Agent（qa / 第 5 章）" vertex="1">
+          <mxGeometry height="30" width="420" x="1015" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="qaPattern" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#2563EB;" value="范式：RAG 检索增强 + 精排 + 记忆管理 + WebSearch 兜底" vertex="1">
+          <mxGeometry height="24" width="560" x="1015" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="q1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;fontSize=12;" value="文档读取&lt;br&gt;分块 / 嵌入 / 入库" vertex="1">
+          <mxGeometry height="62" width="130" x="1025" y="945" as="geometry" />
+        </mxCell>
+        <mxCell id="q2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;fontSize=12;" value="分类&lt;br&gt;HyDE / 多 Query" vertex="1">
+          <mxGeometry height="62" width="130" x="1190" y="945" as="geometry" />
+        </mxCell>
+        <mxCell id="q3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;fontSize=12;" value="Hybrid 召回&lt;br&gt;Reranker 精排" vertex="1">
+          <mxGeometry height="62" width="130" x="1355" y="945" as="geometry" />
+        </mxCell>
+        <mxCell id="q4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;fontSize=12;" value="生成答案&lt;br&gt;WebSearch / 存记忆" vertex="1">
+          <mxGeometry height="62" width="135" x="1520" y="945" as="geometry" />
+        </mxCell>
+        <mxCell id="qOut" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;fontSize=12;fontColor=#1E3A8A;" value="输出 SSE&lt;br&gt;progress / token / meta / done" vertex="1">
+          <mxGeometry height="46" width="330" x="1235" y="1025" as="geometry" />
+        </mxCell>
+        <mxCell id="pipe2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;fontSize=13;fontStyle=1;fontColor=#1E3A8A;" value="Pipeline 2：code_deep_review&lt;br&gt;试卷批改 → 智能问答&lt;br&gt;exam_result 注入 qa context" vertex="1">
+          <mxGeometry height="64" width="260" x="990" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="eq12" edge="1" parent="1" source="q1" style="endArrow=block;html=1;rounded=0;strokeColor=#2563EB;" target="q2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eq23" edge="1" parent="1" source="q2" style="endArrow=block;html=1;rounded=0;strokeColor=#2563EB;" target="q3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eq34" edge="1" parent="1" source="q3" style="endArrow=block;html=1;rounded=0;strokeColor=#2563EB;" target="q4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eq4out" edge="1" parent="1" source="q4" style="endArrow=block;html=1;rounded=0;strokeColor=#2563EB;" target="qOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2b" edge="1" parent="1" source="pipe2" style="endArrow=block;html=1;rounded=0;dashed=1;strokeWidth=2;strokeColor=#2563EB;fontSize=12;" target="q2" value="exam_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pipe1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECFDF5;strokeColor=#059669;fontSize=13;fontStyle=1;fontColor=#064E3B;" value="Pipeline 1：job_preparation&lt;br&gt;简历审查 → 模拟面试&lt;br&gt;resume_result 注入 interview context" vertex="1">
+          <mxGeometry height="64" width="260" x="335" y="1410" as="geometry" />
+        </mxCell>
+        <mxCell id="p1a" edge="1" parent="1" source="rOut" style="endArrow=block;html=1;rounded=0;dashed=1;strokeWidth=2;strokeColor=#059669;" target="pipe1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="250" width="790" x="100" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="resumeBox" parent="6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0FDF4;strokeColor=#10B981;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="250" width="790" as="geometry" />
+        </mxCell>
+        <mxCell id="resumeTitle" parent="6" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;fontColor=#065F46;" value="简历审查 Agent（resume / 第 4 章）" vertex="1">
+          <mxGeometry height="30" width="420" x="25" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="resumePattern" parent="6" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#047857;" value="范式：抽取 → 多维并行评分 → 汇总建议（扇出流程）" vertex="1">
+          <mxGeometry height="24" width="520" x="25" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" parent="6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;fontSize=13;" value="PDF 解析&lt;br&gt;结构化提取" vertex="1">
+          <mxGeometry height="62" width="120" x="35" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" parent="6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;fontSize=13;" value="六维度&lt;br&gt;并行评审" vertex="1">
+          <mxGeometry height="62" width="120" x="195" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" parent="6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;fontSize=13;" value="问题诊断&lt;br&gt;整体评价" vertex="1">
+          <mxGeometry height="62" width="120" x="355" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" parent="6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#10B981;fontSize=13;" value="持久化&lt;br&gt;图装配" vertex="1">
+          <mxGeometry height="62" width="120" x="515" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="rOut" parent="6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#059669;fontSize=12;fontColor=#064E3B;" value="输出 structured&lt;br&gt;score / projects / skills" vertex="1">
+          <mxGeometry height="46" width="330" x="230" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="er12" edge="1" parent="6" source="r1" style="endArrow=block;html=1;rounded=0;strokeColor=#059669;" target="r2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er23" edge="1" parent="6" source="r2" style="endArrow=block;html=1;rounded=0;strokeColor=#059669;" target="r3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er34" edge="1" parent="6" source="r3" style="endArrow=block;html=1;rounded=0;strokeColor=#059669;" target="r4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er4out" edge="1" parent="6" source="r4" style="endArrow=block;html=1;rounded=0;strokeColor=#059669;" target="rOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;快出规则拦截&lt;/h1&gt;&lt;p&gt;基于规则实现.&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="1150" y="-138" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;LLM意图识别&lt;/h1&gt;&lt;p&gt;- qa&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; : 技术知识问答（用户直接提问，不涉及文件上传）&lt;/p&gt;&lt;p&gt;- exam&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; : 试卷/作业批改（需上传 Word 答卷，用户提到&quot;批改&quot;&quot;作业&quot;&quot;提交试卷&quot;等）&lt;/p&gt;&lt;p&gt;- resume&amp;nbsp; &amp;nbsp; &amp;nbsp; : 简历审查（需上传 PDF 简历，用户提到&quot;简历&quot;&quot;帮我看看简历&quot;等）&lt;/p&gt;&lt;p&gt;- interview&amp;nbsp; &amp;nbsp;: 模拟面试（用户提到&quot;面试&quot;&quot;练习面试&quot;&quot;模拟面试&quot;等）&lt;/p&gt;&lt;p&gt;- multi_agent : 综合求职准备（用户同时提到简历 + 面试，或&quot;全套&quot;&quot;一条龙&quot;&quot;求职准备&quot;等）&lt;/p&gt;&lt;p&gt;- clarify&amp;nbsp; &amp;nbsp; &amp;nbsp;: 意图不明确，无法判断，需要追问&lt;/p&gt;" vertex="1">
+          <mxGeometry height="198" width="502.5" x="1117.5" y="22" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&quot;qa&quot;:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; AgentType.QA,&lt;/div&gt;&lt;div&gt;&quot;exam&quot;:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; AgentType.EXAM,&lt;/div&gt;&lt;div&gt;&quot;resume&quot;:&amp;nbsp; &amp;nbsp; &amp;nbsp; AgentType.RESUME,&lt;/div&gt;&lt;div&gt;&quot;interview&quot;:&amp;nbsp; &amp;nbsp;AgentType.INTERVIEW,&lt;/div&gt;&lt;div&gt;&quot;multi_agent&quot;: AgentType.QA,&amp;nbsp; &amp;nbsp;# pipeline 入口，以 QA 作占位&lt;/div&gt;&lt;div&gt;&quot;clarify&quot;:&amp;nbsp; &amp;nbsp; &amp;nbsp;AgentType.QA,&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="395" x="1650" y="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
