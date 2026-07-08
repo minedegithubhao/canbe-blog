@@ -1,16 +1,22 @@
 <mxfile host="embed.diagrams.net">
   <diagram id="OjYw6yGHvoZRQUtXN0RC" name="第 1 页">
-    <mxGraphModel dx="866" dy="1324" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2324" dy="1964" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="BOY22OA9ZzY5tOW-Ic-X-3" edge="1" parent="1" source="BOY22OA9ZzY5tOW-Ic-X-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BOY22OA9ZzY5tOW-Ic-X-2" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="BOY22OA9ZzY5tOW-Ic-X-25" edge="1" parent="1" source="BOY22OA9ZzY5tOW-Ic-X-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="BOY22OA9ZzY5tOW-Ic-X-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="BOY22OA9ZzY5tOW-Ic-X-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;div&gt;阶段一：&lt;/div&gt;商品滞销原因分析" vertex="1">
           <mxGeometry height="60" width="120" x="189" y="52" as="geometry" />
         </mxCell>
         <mxCell id="BOY22OA9ZzY5tOW-Ic-X-5" edge="1" parent="1" source="BOY22OA9ZzY5tOW-Ic-X-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BOY22OA9ZzY5tOW-Ic-X-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BOY22OA9ZzY5tOW-Ic-X-24" edge="1" parent="1" source="BOY22OA9ZzY5tOW-Ic-X-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="BOY22OA9ZzY5tOW-Ic-X-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="BOY22OA9ZzY5tOW-Ic-X-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="阶段二：&lt;div&gt;需求分析、缺货预警、智能补货&lt;/div&gt;" vertex="1">
@@ -60,6 +66,9 @@
         </mxCell>
         <mxCell id="BOY22OA9ZzY5tOW-Ic-X-22" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;6、测试评估&lt;/h1&gt;&lt;p&gt;完善正负样本集，反哺机器学习算法&lt;/p&gt;" vertex="1">
           <mxGeometry height="120" width="180" x="531" y="728" as="geometry" />
+        </mxCell>
+        <mxCell id="BOY22OA9ZzY5tOW-Ic-X-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;font style=&quot;font-size: 21px; color: light-dark(rgb(0, 0, 0), rgb(255, 51, 51));&quot;&gt;滞销风险预测与预警系统&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;每日凌晨 ETL / 数据同步&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;生成 SKU-门店-日期级特征宽表&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;运行滞销识别规则&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;运行滞销风险预测&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;运行根因诊断&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;生成预警等级&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;写入预警表 / 推送工作台&lt;/div&gt;&lt;div&gt;&amp;nbsp; ↓&lt;/div&gt;&lt;div&gt;业务处理与反馈&lt;/div&gt;" vertex="1">
+          <mxGeometry height="287" width="249" x="-164" y="101" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
