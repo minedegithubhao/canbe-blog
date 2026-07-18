@@ -1,0 +1,57 @@
+<mxfile host="embed.diagrams.net" pages="2">
+  <diagram id="OjYw6yGHvoZRQUtXN0RC" name="异步编程">
+    <mxGraphModel dx="1366" dy="524" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ct2OftGkzHce029GM0g2-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="&amp;nbsp;I/O 密集型任务" vertex="1">
+          <mxGeometry height="60" width="120" x="-428" y="512" as="geometry" />
+        </mxCell>
+        <mxCell id="5TuE7njRLdIfsM_UoxPk-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="定义异步方法：&lt;div&gt;async def say_hello():&lt;br&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;pass&lt;/blockquote&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="190" x="-250" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="5TuE7njRLdIfsM_UoxPk-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="异步并行" vertex="1">
+          <mxGeometry height="54" width="117" x="-252" y="583" as="geometry" />
+        </mxCell>
+        <mxCell id="tsyE0POTk5gCLQg9vnWO-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="&lt;div&gt;执行异步方法：&lt;/div&gt;async def main():&lt;br&gt;&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;    result = await say_hello()    # 用 await 等它跑完并拿到返回值&lt;br&gt;    print(&quot;拿到结果：&quot;, result)&lt;/blockquote&gt;" vertex="1">
+          <mxGeometry height="82" width="248" x="-250" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2kLZn1RrW-Li4JzVL6D-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="&lt;div&gt;执行异步方法，总入口：&lt;/div&gt;&lt;div&gt;asyncio.run(...)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="47" width="146" x="-250" y="508" as="geometry" />
+        </mxCell>
+        <mxCell id="aTPLRXBz5I4ibtcx4erU-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="&lt;div&gt;异步方法里执行同步方法&lt;/div&gt;" vertex="1">
+          <mxGeometry height="51" width="173" x="-252" y="669" as="geometry" />
+        </mxCell>
+        <mxCell id="Ko4RAdDfk2NeuGAsfPv7-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="&lt;div&gt;&lt;span style=&quot;background-color: light-dark(rgb(245, 245, 245), rgb(26, 26, 26)); color: var(--md-code-hl-keyword-color); font-family: &amp;quot;Roboto Mono&amp;quot;, SFMono-Regular, Consolas, Menlo, monospace; font-size: 13.6px; white-space: pre;&quot;&gt;后台任务&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="53" width="154.5" x="-252" y="752" as="geometry" />
+        </mxCell>
+        <mxCell id="Ko4RAdDfk2NeuGAsfPv7-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="异步上下文管理@asynccontextmanager" vertex="1">
+          <mxGeometry height="52" width="189" x="-250" y="837" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="kWlBPPSGbiZUWqp1uFTo" name="Pydantic">
+    <mxGraphModel dx="805" dy="524" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f5uLanp0-iYtZfacy-hW-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Pydantic" vertex="1">
+          <mxGeometry height="60" width="120" x="67" y="211" as="geometry" />
+        </mxCell>
+        <mxCell id="f5uLanp0-iYtZfacy-hW-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="大模型结构化输出" vertex="1">
+          <mxGeometry height="60" width="120" x="254" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f5uLanp0-iYtZfacy-hW-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="读取配置文件.env" vertex="1">
+          <mxGeometry height="60" width="120" x="252" y="171" as="geometry" />
+        </mxCell>
+        <mxCell id="f5uLanp0-iYtZfacy-hW-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="数据类型转化" vertex="1">
+          <mxGeometry height="60" width="120" x="252" y="262" as="geometry" />
+        </mxCell>
+        <mxCell id="f5uLanp0-iYtZfacy-hW-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="数据校验" vertex="1">
+          <mxGeometry height="60" width="120" x="252" y="353" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

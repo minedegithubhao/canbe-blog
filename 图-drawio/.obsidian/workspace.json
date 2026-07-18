@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "2a41e2c7295f529d",
+        "id": "0810a1fe1305c790",
         "type": "tabs",
         "children": [
           {
-            "id": "066a22b5991b9f55",
+            "id": "4f24591d15fbd31d",
             "type": "leaf",
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "Agent/零售行业Agent.drawio"
+                "file": "Vibe Codeing/Claude Code.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "零售行业Agent"
+              "title": "Claude Code"
             }
           }
         ]
@@ -76,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d1e4c49cffc03766",
@@ -181,17 +180,22 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "066a22b5991b9f55",
+  "active": "a036519e760d519b",
   "lastOpenFiles": [
+    "RAG/RAG全景.drawio",
+    "RAG/版本管理.drawio",
+    "Python高阶/异步编程.drawio",
+    "Excalidraw/职业发展规划-枫清.md",
     "Agent/Agent.drawio",
-    "RAG/知识图谱.drawio",
     "Agent/零售行业Agent.drawio",
     "Agent/Agent项目.drawio",
-    "未命名.canvas",
+    "RAG/知识图谱.drawio",
     "大模型开发.drawio",
-    "RAG/RAG全景.drawio",
+    "Vibe Codeing/Claude Code.drawio",
+    "职业发展规划.drawio",
+    "Python高阶/异步编程.md",
+    "未命名.canvas",
     "技术面试题_细粒度高频考点.md",
-    "RAG/版本管理.drawio",
     "面试题/面试题/阿里淘天AI应用研发一面面经整理.md",
     "面试题/面试题/超细技术题整理/技术面试题_细粒度高频索引.md",
     "面试题/面试题/超细技术题整理/技术面试题_细粒度高频考点.md",
@@ -201,10 +205,6 @@
     "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md",
     "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_高频汇总.md",
     "面试题/技术面试题_细粒度高频索引.md",
-    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频索引.md.bak_before_add_categories",
-    "面试题/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md.bak_before_add_categories",
-    "面试题/__MACOSX/面试题/西安AI大模型2期整理/人际题",
-    "面试题/__MACOSX/面试题/西安AI大模型2期整理/技术题",
     "面试题/面试题/Attention与Transformer面试题_40题.md",
     "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_高频索引.md",
     "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_原始题目汇总.md",
@@ -218,8 +218,6 @@
     "面试题/技术面试题_细粒度高频考点.md",
     "面试题/人际面试题_高频汇总.md",
     "Agent/Agent.drawio.md",
-    "Excalidraw/Drawing 2026-06-30 14.18.33.excalidraw.md",
-    "2026-06-30.md",
     "未命名 1.canvas"
   ]
 }
