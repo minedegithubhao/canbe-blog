@@ -11,12 +11,12 @@
             "id": "4f24591d15fbd31d",
             "type": "leaf",
             "state": {
-              "type": "drawio-file-view",
+              "type": "excalidraw",
               "state": {
-                "file": "Vibe Codeing/Claude Code.drawio"
+                "file": "Excalidraw/职业发展规划-枫清.md"
               },
-              "icon": "pencil-ruler",
-              "title": "Claude Code"
+              "icon": "excalidraw-icon",
+              "title": "职业发展规划-枫清"
             }
           }
         ]
@@ -180,18 +180,18 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a036519e760d519b",
+  "active": "6c0389c7f4cc824f",
   "lastOpenFiles": [
-    "RAG/RAG全景.drawio",
-    "RAG/版本管理.drawio",
-    "Python高阶/异步编程.drawio",
     "Excalidraw/职业发展规划-枫清.md",
+    "Python高阶/异步编程.drawio",
+    "RAG/版本管理.drawio",
+    "RAG/RAG全景.drawio",
+    "Vibe Codeing/Claude Code.drawio",
     "Agent/Agent.drawio",
     "Agent/零售行业Agent.drawio",
     "Agent/Agent项目.drawio",
     "RAG/知识图谱.drawio",
     "大模型开发.drawio",
-    "Vibe Codeing/Claude Code.drawio",
     "职业发展规划.drawio",
     "Python高阶/异步编程.md",
     "未命名.canvas",
