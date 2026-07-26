@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "工作方法论/工作能力差.drawio"
+                "file": "Python高阶/异步编程.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "工作能力差"
+              "title": "异步编程"
             }
           }
         ]
@@ -180,10 +180,10 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "a036519e760d519b",
+  "active": "4478390120c57ceb",
   "lastOpenFiles": [
-    "学习方法论/5步学习闭环.drawio",
     "工作方法论/工作能力差.drawio",
+    "学习方法论/5步学习闭环.drawio",
     "工作方法论",
     "Agent/零售行业Agent.drawio",
     "Agent/Agent.drawio",
