@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0810a1fe1305c790",
+        "id": "0a304454eb5d3f6d",
         "type": "tabs",
         "children": [
           {
-            "id": "4f24591d15fbd31d",
+            "id": "4478390120c57ceb",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "drawio-file-view",
               "state": {
-                "file": "Excalidraw/职业发展规划-枫清.md"
+                "file": "工作方法论/工作能力差.drawio"
               },
-              "icon": "excalidraw-icon",
-              "title": "职业发展规划-枫清"
+              "icon": "pencil-ruler",
+              "title": "工作能力差"
             }
           }
         ]
@@ -180,21 +180,27 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "6c0389c7f4cc824f",
+  "active": "a036519e760d519b",
   "lastOpenFiles": [
-    "Excalidraw/职业发展规划-枫清.md",
-    "Python高阶/异步编程.drawio",
-    "RAG/版本管理.drawio",
-    "RAG/RAG全景.drawio",
-    "Vibe Codeing/Claude Code.drawio",
-    "Agent/Agent.drawio",
+    "学习方法论/5步学习闭环.drawio",
+    "工作方法论/工作能力差.drawio",
+    "工作方法论",
     "Agent/零售行业Agent.drawio",
-    "Agent/Agent项目.drawio",
+    "Agent/Agent.drawio",
+    "学习方法论",
+    "Agent/MCP权限控制.drawio",
+    "Excalidraw/个税.md",
+    "RAG/RAG全景.drawio",
+    "RAG/FAQ进阶.drawio",
     "RAG/知识图谱.drawio",
-    "大模型开发.drawio",
-    "职业发展规划.drawio",
-    "Python高阶/异步编程.md",
+    "RAG/版本管理.drawio",
+    "YZW短视频/短视频.md",
+    "YZW短视频/未命名.md",
     "未命名.canvas",
+    "短视频/Drawing 2026-07-25 12.24.08.excalidraw.md",
+    "RAG/未命名.md",
+    "Excalidraw/Drawing 2026-07-08 11.17.39.excalidraw.md",
+    "Excalidraw/Drawing 2026-07-08 11.17.22.excalidraw.md",
     "技术面试题_细粒度高频考点.md",
     "面试题/面试题/阿里淘天AI应用研发一面面经整理.md",
     "面试题/面试题/超细技术题整理/技术面试题_细粒度高频索引.md",
@@ -213,11 +219,6 @@
     "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md",
     "面试题(1)/面试题/超细技术题整理/技术面试题_细粒度高频考点.md",
     "面试题(1)/面试题/超细技术题整理/技术面试题_细粒度高频索引.md",
-    "面试题(1)/面试题/阿里淘天AI应用研发一面面经整理.md",
-    "面试题(1)/面试题/Attention与Transformer面试题_40题.md",
-    "面试题/技术面试题_细粒度高频考点.md",
-    "面试题/人际面试题_高频汇总.md",
-    "Agent/Agent.drawio.md",
     "未命名 1.canvas"
   ]
 }

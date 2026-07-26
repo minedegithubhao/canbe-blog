@@ -1,0 +1,67 @@
+<mxfile host="embed.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36">
+  <diagram id="F_Ufl4cy4FjfSSTR2Odr" name="第 1 页">
+    <mxGraphModel dx="1446" dy="776" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="13" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="FAQ用法" vertex="1">
+          <mxGeometry height="60" width="120" x="178" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="21" edge="1" parent="1" source="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="标准问答库&lt;br&gt;&lt;font style=&quot;color: rgb(255, 51, 51);&quot;&gt;使用场景：高频、稳定、答案变化不大的问题&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="178" y="373" as="geometry" />
+        </mxCell>
+        <mxCell id="23" edge="1" parent="1" source="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="问法归一库&lt;div&gt;&lt;font style=&quot;color: rgb(255, 51, 51);&quot;&gt;使用场景：高频答案会变动&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="328" y="373" as="geometry" />
+        </mxCell>
+        <mxCell id="19" edge="1" parent="1" source="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="意图路由库&lt;br&gt;&lt;font style=&quot;color: rgb(255, 51, 51);&quot;&gt;使用场景：适合流程类、业务规则类问题&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="28" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="31" edge="1" parent="1" source="18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="路由，进入不同流程" vertex="1">
+          <mxGeometry height="60" width="120" x="28" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="27" edge="1" parent="1" source="20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="查库直出" vertex="1">
+          <mxGeometry height="60" width="120" x="178" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="25" edge="1" parent="1" source="22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="RAG，记录问题所在文档，文档ID作为筛选条件" vertex="1">
+          <mxGeometry height="60" width="120" x="328" y="513" as="geometry" />
+        </mxCell>
+        <mxCell id="24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;question&quot;: &quot;差旅报销需要谁审批？&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;doc_id&quot;: &quot;doc_1&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;，&quot;doc_2&quot;]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="113" width="282" x="326" y="661" as="geometry" />
+        </mxCell>
+        <mxCell id="26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;question&quot;: &quot;差旅报销需要谁审批？&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;answer&quot;: &quot;需要经过部门负责人和财务审批&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="252" x="173" y="816" as="geometry" />
+        </mxCell>
+        <mxCell id="30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;question&quot;: &quot;差旅报销需要谁审批？&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;intent&quot;: &quot;query_reimbursement_approval&quot;,&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;slots&quot;: [&quot;employee&quot;, &quot;amount&quot;, &quot;expense_type&quot;],&lt;/div&gt;&lt;div&gt;&amp;nbsp; &quot;route&quot;: [&quot;rag_policy&quot;, &quot;structured_org&quot;, &quot;graph_relation&quot;]&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="127" width="255" x="-52" y="675" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
