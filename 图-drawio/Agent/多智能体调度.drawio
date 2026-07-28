@@ -1,0 +1,25 @@
+<mxfile host="embed.diagrams.net">
+  <diagram id="lMZ7mWOntCIoi1e6ijMl" name="多智能体调度">
+    <mxGraphModel dx="866" dy="644" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aiGRUbxCN3hcr4-in4ZX-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="多Agent调度模式" vertex="1">
+          <mxGeometry height="60" width="120" x="113" y="299" as="geometry" />
+        </mxCell>
+        <mxCell id="aiGRUbxCN3hcr4-in4ZX-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="协调模式" vertex="1">
+          <mxGeometry height="60" width="120" x="299" y="117" as="geometry" />
+        </mxCell>
+        <mxCell id="aiGRUbxCN3hcr4-in4ZX-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="广播模式" vertex="1">
+          <mxGeometry height="60" width="120" x="297" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="aiGRUbxCN3hcr4-in4ZX-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="路由模式" vertex="1">
+          <mxGeometry height="60" width="120" x="299" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="aiGRUbxCN3hcr4-in4ZX-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="工作流模式" vertex="1">
+          <mxGeometry height="60" width="120" x="299" y="469" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

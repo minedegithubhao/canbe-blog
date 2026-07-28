@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0a304454eb5d3f6d",
+        "id": "0d7dbc3902ef6cbb",
         "type": "tabs",
         "children": [
           {
-            "id": "4478390120c57ceb",
+            "id": "a4a56e1670e48ff9",
             "type": "leaf",
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "Python高阶/异步编程.drawio"
+                "file": "枫清科技/业务知识.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "异步编程"
+              "title": "业务知识"
             }
           }
         ]
@@ -180,20 +180,23 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "4478390120c57ceb",
+  "active": "a4a56e1670e48ff9",
   "lastOpenFiles": [
-    "工作方法论/工作能力差.drawio",
-    "学习方法论/5步学习闭环.drawio",
-    "工作方法论",
-    "Agent/零售行业Agent.drawio",
+    "枫清科技/学习方法论.drawio",
+    "枫清科技/业务知识.drawio",
+    "枫清科技/日报.md",
+    "枫清科技/专业术语.drawio",
+    "枫清科技/Drawing 2026-07-28 15.26.58.excalidraw.md",
+    "枫清科技/工作方法论.drawio",
+    "Agent/多智能体调度.drawio",
+    "Agent/Agent项目.drawio",
+    "枫清科技/职业发展规划-枫清.md",
     "Agent/Agent.drawio",
-    "学习方法论",
-    "Agent/MCP权限控制.drawio",
+    "Agent/零售行业Agent.drawio",
+    "Agent/Jwt权限控制.drawio",
+    "枫清科技/称呼.drawio",
+    "枫清科技/专业术语.md",
     "Excalidraw/个税.md",
-    "RAG/RAG全景.drawio",
-    "RAG/FAQ进阶.drawio",
-    "RAG/知识图谱.drawio",
-    "RAG/版本管理.drawio",
     "YZW短视频/短视频.md",
     "YZW短视频/未命名.md",
     "未命名.canvas",
@@ -215,10 +218,6 @@
     "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_高频索引.md",
     "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_原始题目汇总.md",
     "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_高频汇总.md",
-    "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频索引.md",
-    "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_细粒度高频汇总.md",
-    "面试题(1)/面试题/超细技术题整理/技术面试题_细粒度高频考点.md",
-    "面试题(1)/面试题/超细技术题整理/技术面试题_细粒度高频索引.md",
     "未命名 1.canvas"
   ]
 }
