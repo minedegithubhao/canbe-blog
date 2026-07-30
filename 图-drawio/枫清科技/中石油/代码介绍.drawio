@@ -1,0 +1,439 @@
+<mxfile host="embed.diagrams.net" pages="5">
+  <diagram id="OjYw6yGHvoZRQUtXN0RC" name="抽取器">
+    <mxGraphModel dx="1252" dy="524" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-1" edge="1" parent="1" source="MImWcM-LBLNL1IIhHBaV-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="MImWcM-LBLNL1IIhHBaV-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-2" connectable="0" parent="MImWcM-LBLNL1IIhHBaV-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="VLM路线" vertex="1">
+          <mxGeometry relative="1" x="-0.0144" y="2" as="geometry">
+            <mxPoint x="1" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-3" edge="1" parent="1" source="MImWcM-LBLNL1IIhHBaV-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="MImWcM-LBLNL1IIhHBaV-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-4" connectable="0" parent="MImWcM-LBLNL1IIhHBaV-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Parsed路线&lt;div&gt;（通常包含 OCR、版面分析、表格识别）&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0829" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="文档" vertex="1">
+          <mxGeometry height="60" width="120" x="-113" y="318" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-6" edge="1" parent="1" source="MImWcM-LBLNL1IIhHBaV-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="MImWcM-LBLNL1IIhHBaV-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-7" connectable="0" parent="MImWcM-LBLNL1IIhHBaV-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="VLM + 字段schame/抽取规则" vertex="1">
+          <mxGeometry relative="1" x="0.509" as="geometry">
+            <mxPoint x="-49" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="转图片" vertex="1">
+          <mxGeometry height="60" width="120" x="134" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="结构化数据" vertex="1">
+          <mxGeometry height="60" width="120" x="501" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-10" edge="1" parent="1" source="MImWcM-LBLNL1IIhHBaV-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="MImWcM-LBLNL1IIhHBaV-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-11" connectable="0" parent="MImWcM-LBLNL1IIhHBaV-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="LLM + 字段schame/抽取规则" vertex="1">
+          <mxGeometry relative="1" x="-0.1591" y="-1" as="geometry">
+            <mxPoint x="7" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="转Markdown" vertex="1">
+          <mxGeometry height="60" width="120" x="134" y="408" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="结构化数据" vertex="1">
+          <mxGeometry height="60" width="120" x="501" y="408" as="geometry" />
+        </mxCell>
+        <mxCell id="MImWcM-LBLNL1IIhHBaV-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;code&gt;schema&lt;/code&gt; 实际包含两部分：&lt;/div&gt;1、输出结构：需要返回哪些字段、字段类型是什么。&lt;div&gt;2、抽取规则：每个字段代表什么、找不到时怎么处理、表格如何抽取等。&lt;/div&gt;" vertex="1">
+          <mxGeometry height="56" width="290" x="190" y="131" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="FQfTufS6eRuPpOM4q5RZ" name="主项目">
+    <mxGraphModel dx="1091" dy="524" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;核心职责&lt;/h1&gt;&lt;p&gt;材料抽取 -&amp;gt; 结果接收 -&amp;gt; 审核规则执行 -&amp;gt; 通知客户&lt;/p&gt;" vertex="1">
+          <mxGeometry height="90" width="307" x="197" y="39" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-4" edge="1" parent="1" source="TJZuBrm4Y_e9OUJ8gkCn-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="TJZuBrm4Y_e9OUJ8gkCn-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;&lt;code&gt;Workbench&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="77" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-13" edge="1" parent="1" source="TJZuBrm4Y_e9OUJ8gkCn-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="TJZuBrm4Y_e9OUJ8gkCn-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-14" connectable="0" parent="TJZuBrm4Y_e9OUJ8gkCn-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="调用" vertex="1">
+          <mxGeometry relative="1" x="-0.1613" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-16" edge="1" parent="1" source="TJZuBrm4Y_e9OUJ8gkCn-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="TJZuBrm4Y_e9OUJ8gkCn-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;&lt;code&gt;提交抽取任务给主项目&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="277" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-11" edge="1" parent="1" source="TJZuBrm4Y_e9OUJ8gkCn-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="TJZuBrm4Y_e9OUJ8gkCn-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-12" connectable="0" parent="TJZuBrm4Y_e9OUJ8gkCn-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="回调" vertex="1">
+          <mxGeometry relative="1" x="-0.0968" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;&lt;code&gt;调用抽取器&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="277" y="337" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-18" edge="1" parent="1" source="TJZuBrm4Y_e9OUJ8gkCn-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="TJZuBrm4Y_e9OUJ8gkCn-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-19" connectable="0" parent="TJZuBrm4Y_e9OUJ8gkCn-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="回调" vertex="1">
+          <mxGeometry relative="1" x="-0.175" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;&lt;code&gt;保存字段结果&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;执行审核规则&lt;/code&gt;&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="477" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="TJZuBrm4Y_e9OUJ8gkCn-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;客户后端&lt;/pre&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="719" y="184" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="2XSq1szUNsmDMd5OpfZs" name="接口说明">
+    <mxGraphModel dx="1491" dy="524" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PKGiXR_d_BkTq9GsaMVf-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;主要接口&lt;/th&gt;&lt;th&gt;作用&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST /title/evaluation/v1/auth/token&lt;/code&gt;&lt;/td&gt;&lt;td&gt;使用系统账号密码换取 JWT Token。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/health&lt;/code&gt;&lt;/td&gt;&lt;td&gt;仅检查服务是否存活。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/ready&lt;/code&gt;&lt;/td&gt;&lt;td&gt;检查主项目、MySQL、Redis 是否已就绪。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST /title/evaluation/v1/extract&lt;/code&gt;&lt;/td&gt;&lt;td&gt;提交材料抽取任务。主项目会按材料项组织文件，并异步调用抽取器。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST /title/evaluation/v1/extract/upload&lt;/code&gt;&lt;/td&gt;&lt;td&gt;直接上传 ZIP 材料包，跳过客户网关下载文件的流程。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/extract/{batch_id}/status&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询抽取任务进度、阶段和错误。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/extract/{batch_id}&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询最终抽取结果，格式与客户回调结果一致。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/extract/{batch_id}/raw&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询标准化前的原始抽取结果，主要用于诊断。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST /title/evaluation/v1/extract/callback&lt;/code&gt;&lt;/td&gt;&lt;td&gt;抽取器完成识别后调用此接口，把 &lt;code&gt;task_id&lt;/code&gt; 与抽取结果交还主项目。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST /title/evaluation/v1/audit&lt;/code&gt;&lt;/td&gt;&lt;td&gt;创建审核任务，根据已抽取字段执行审核规则。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/audit/{task_no}&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询审核任务的当前状态。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET /title/evaluation/v1/audit/{task_no}/result&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询最终审核结果，格式与通知客户的结果一致。&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="359" width="806" x="-300" y="38" as="geometry" />
+        </mxCell>
+        <mxCell id="PKGiXR_d_BkTq9GsaMVf-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="审核管理后台&lt;div&gt;&lt;pre&gt;&lt;code&gt;/title/evaluation/v1/admin/audit&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;接口类别&lt;/th&gt;&lt;th&gt;作用&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/dashboard&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看审核任务、结果和运行概览。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/tasks&lt;/code&gt;、&lt;code&gt;/tasks/{task_no}&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询审核任务、材料项、规则执行日志和回调尝试记录。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/rules&lt;/code&gt;&lt;/td&gt;&lt;td&gt;审核规则的新增、查询、修改、启停、校验。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/rule-sets&lt;/code&gt;&lt;/td&gt;&lt;td&gt;管理规则集合及其中包含的规则。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/rule-match-configs&lt;/code&gt;&lt;/td&gt;&lt;td&gt;配置何种材料或字段应匹配哪套规则。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/input-schema&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查询规则可使用的输入数据结构。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;/runtime-tests/quickjs&lt;/code&gt;、&lt;code&gt;/zen-expression&lt;/code&gt;、&lt;code&gt;/zen-jdm&lt;/code&gt;&lt;/td&gt;&lt;td&gt;在线测试三种规则运行时。&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="303" width="835" x="-290" y="430" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="rgC9K6tyfR6BmKTt2Drq" name="表结构-旧">
+    <mxGraphModel dx="4037" dy="2147" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2600" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="db-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontStyle=1;fontSize=22;" value="智能审核助手 - 核心业务表结构（MySQL）" vertex="1">
+          <mxGeometry height="35" width="700" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="db-note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="实线：数据库外键；虚线：逻辑关联（通过 ID 或 JSON 配置关联）。表内格式为“字段：字段说明”；PK=主键，FK=外键，UK=唯一键。" vertex="1">
+          <mxGeometry height="25" width="900" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="extract-title" parent="1" style="swimlane;html=1;rounded=0;startSize=28;horizontal=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value="抽取链路" vertex="1">
+          <mxGeometry height="750" width="1030" x="30" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="extract-requests" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="extract_requests&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id：主键；biz_id：业务申请标识；batch_id：对外批次号；status/phase/progress：处理进度；apply_payload：请求原文；result_payload：最终结果；notify_status：通知状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="210" x="60" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="extract-items" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="extract_material_items&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id：主键；extract_request_id：所属抽取批次；source_material_item_id：来源材料项；material_category：材料类别；material_item_name：材料名称；status：处理状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="220" x="340" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="extract-files" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="extract_files&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id：主键；material_item_id：所属材料项；source_file_id/filename：来源文件；url/storage_uri：下载与存储地址；sha256：文件摘要；status/error_message：处理结果&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="230" x="640" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="classification" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="extract_file_classification_results&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;file_id：对应文件；classifier_id：分类器；external_uuid：外部任务号；classification：分类 JSON；status/attempts：执行状态与次数；error_*：失败信息&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="250" x="640" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="extraction-results" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="extract_extraction_results&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;material_item_id：所属材料项；package_index：材料包序号；external_uuid：抽取器任务号；input_fingerprint：输入指纹；extracted：结构化字段 JSON；status：抽取状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="250" x="340" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="extract-issues" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#6c8ebf;" value="extract_issues&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;material_item_id：所属材料项；issue_id：问题唯一号；code/severity：问题编码与级别；message/suggestion：问题与建议；file_id/field：定位文件与字段；source：问题来源&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="220" x="60" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="audit-title" parent="1" style="swimlane;html=1;rounded=0;startSize=28;horizontal=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" value="审核任务与执行日志" vertex="1">
+          <mxGeometry height="430" width="700" x="1100" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="audit-tasks" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#82b366;" value="audit_tasks&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;id：主键；task_no：对外任务号；apply_guid：申报记录；conversation_guid：回调关联；audit_payload：审核请求 JSON；delivery_mode：交付方式；execution_status/error_message：执行结果&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="210" x="1130" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="audit-items" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#82b366;" value="audit_items&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;audit_task_id：所属审核任务；business_id：业务记录号；item_order：记录顺序；source_data_path：取数路径；matched_rule_set_codes：命中规则集；item_payload：待审核数据；execution_status：状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="220" x="1410" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-logs" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#82b366;" value="audit_rule_execution_logs&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;audit_item_id：所属审核项；rule_id/code/version：执行规则快照；execution_status：技术状态；decision：业务判定；message/output_text：结果详情；duration_ms：耗时&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="250" x="1410" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="rules-title" parent="1" style="swimlane;html=1;rounded=0;startSize=28;horizontal=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" value="审核规则配置" vertex="1">
+          <mxGeometry height="540" width="1080" x="1100" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="rules" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#d6b656;" value="audit_rules&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;rule_code：规则唯一编码；rule_name：规则名称；runtime_type：运行时；expression_source/jdm_content/plugin_code：规则定义；runtime_config：运行配置；version_no/enabled：版本与启用状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="240" x="1130" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-sets" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#d6b656;" value="audit_rule_sets&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;rule_set_code：规则集唯一编码；rule_set_name：名称；rule_set_description：用途；version_no：版本；enabled：启用状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="175" width="210" x="1450" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="rule-set-rules" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#d6b656;" value="audit_rule_set_rules&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;rule_set_id/rule_id：规则集与规则外键；execution_order：执行顺序；override_config：当前规则集覆盖配置；enabled：关联是否启用&lt;/font&gt;" vertex="1">
+          <mxGeometry height="185" width="230" x="1770" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="match-config" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#d6b656;" value="audit_rule_match_configs&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;match_config_code：配置编码；data_path：待匹配数据路径；conditions：匹配条件；target_rule_set_codes/target_rule_sets：目标规则集；enabled/version_no：状态与乐观锁版本&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="260" x="1450" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="support-title" parent="1" style="swimlane;html=1;rounded=0;startSize=28;horizontal=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" value="通知、码值与基础设施" vertex="1">
+          <mxGeometry height="480" width="1030" x="30" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="notify" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#9673a6;" value="notify_attempts&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;kind/entity_id：抽取或审核业务对象；batch_id/attempt_no：重试幂等标识；callback_url：目标地址；request_body：推送载荷；status/HTTP 响应/error：投递结果&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="230" x="60" y="985" as="geometry" />
+        </mxCell>
+        <mxCell id="code-dict" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#9673a6;" value="code_dict_items&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;dict_version：字典版本；material_category：材料类别；field_name/label：业务字段；code/label：码值与文本；parent_chain：级联父路径；source_*：来源表格定位&lt;/font&gt;" vertex="1">
+          <mxGeometry height="190" width="220" x="360" y="985" as="geometry" />
+        </mxCell>
+        <mxCell id="system-accounts" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#9673a6;" value="system_accounts&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;username：登录名；password_hash：密码摘要；name：显示名称；is_active：账户可用状态&lt;/font&gt;" vertex="1">
+          <mxGeometry height="155" width="190" x="650" y="985" as="geometry" />
+        </mxCell>
+        <mxCell id="stored-files" parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;html=1;align=center;resizeLast=1;fillColor=#ffffff;strokeColor=#9673a6;" value="files&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;bucket/object_key：对象存储定位；filename/mime_type：文件信息；size/sha256：大小与摘要；owner_id：所属人；expires_at：过期时间&lt;/font&gt;" vertex="1">
+          <mxGeometry height="165" width="190" x="650" y="1215" as="geometry" />
+        </mxCell>
+        <mxCell id="integration-log" parent="1" style="shape=umlFrame;html=1;whiteSpace=wrap;rounded=0;align=left;verticalAlign=top;spacing=8;fillColor=#ffffff;strokeColor=#9673a6;" value="&lt;b&gt;integration_logs&lt;/b&gt;&lt;hr&gt;PK id&lt;br&gt;batch_id&lt;br&gt;system_name, operation&lt;br&gt;request_id, url&lt;br&gt;status, http_status&lt;br&gt;duration_ms, error_message" vertex="1">
+          <mxGeometry height="175" width="220" x="360" y="1215" as="geometry" />
+        </mxCell>
+        <mxCell id="e-request-item" edge="1" parent="1" source="extract-requests" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" target="extract-items">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-item-file" edge="1" parent="1" source="extract-items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" target="extract-files">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-file-class" edge="1" parent="1" source="extract-files" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" target="classification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-item-result" edge="1" parent="1" source="extract-items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" target="extraction-results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-item-issue" edge="1" parent="1" source="extract-items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" target="extract-issues">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-task-item" edge="1" parent="1" source="audit-tasks" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#82b366;" target="audit-items">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-item-log" edge="1" parent="1" source="audit-items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#82b366;" target="rule-logs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-set-member" edge="1" parent="1" source="rule-sets" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#d6b656;" target="rule-set-rules">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-rule-member" edge="1" parent="1" source="rules" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#d6b656;" target="rule-set-rules">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-match-set" edge="1" parent="1" source="match-config" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;dashPattern=4 4;strokeColor=#d6b656;" target="rule-sets">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-notify-extract" edge="1" parent="1" source="notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;dashPattern=4 4;strokeColor=#9673a6;" target="extract-requests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-notify-audit" edge="1" parent="1" source="notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;dashPattern=4 4;strokeColor=#9673a6;" target="audit-tasks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ftQi9UIK6F7JX7d0ShC4-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div&gt;抽取批次 extract_requests&lt;/div&gt;&lt;div&gt;&amp;nbsp; └─ 材料项 extract_material_items&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;├─ 文件 extract_files&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;│&amp;nbsp; &amp;nbsp; └─ 分类结果 extract_file_classification_results&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;├─ 抽取结果 extract_extraction_results&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;└─ 抽取问题 extract_issues&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;审核任务 audit_tasks&lt;/div&gt;&lt;div&gt;&amp;nbsp; └─ 审核项 audit_items&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;└─ 规则执行日志 audit_rule_execution_logs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;规则集 audit_rule_sets&lt;/div&gt;&lt;div&gt;&amp;nbsp; └─ audit_rule_set_rules&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;└─ 审核规则 audit_rules&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;审核数据路径/条件 -&amp;gt; audit_rule_match_configs -&amp;gt; 规则集&lt;/div&gt;" vertex="1">
+          <mxGeometry height="245" width="574" x="507" y="-291" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="entity-table-schema" name="表结构">
+    <mxGraphModel dx="628817" dy="417549" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontStyle=1;fontSize=22;strokeColor=none;fillColor=none;" value="智能审核助手 - 核心表结构（实体组件）&lt;div&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PK 主键 ｜ FK 外键 ｜ UK 唯一键 ｜ JSON 结构化内容&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="76" width="600" x="-158" y="-383" as="geometry" />
+        </mxCell>
+        <mxCell id="r" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="extract_requests（抽取请求）" vertex="1">
+          <mxGeometry height="183" width="310" x="-158" y="-182.81" as="geometry" />
+        </mxCell>
+        <mxCell id="rr" parent="r" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id：主键&lt;br&gt;biz_id：业务申请标识&lt;br&gt;UK &lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;batch_id&lt;/span&gt;：对外批次号（查询用）&lt;br&gt;status&lt;div&gt;phase&lt;/div&gt;&lt;div&gt;progress：抽取进度&lt;br&gt;result_payload JSON：&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;notify_status&lt;/span&gt;最终抽取结果&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;张三本次申报材料的抽取任务&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="mi" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="extract_material_items（抽取批次材料项）" vertex="1">
+          <mxGeometry height="150" width="310" x="262" y="-174.81" as="geometry" />
+        </mxCell>
+        <mxCell id="mir" parent="mi" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id：主键&lt;br&gt;FK extract_request_id：所属抽取批次&lt;br&gt;material_category：材料类别&lt;br&gt;material_item_name：材料名称&lt;br&gt;status：处理状态&lt;div&gt;&lt;br&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;学历材料项、&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;专业技术资格材料项、&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;论文材料项&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ef" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="extract_files（材料项原始文件）" vertex="1">
+          <mxGeometry height="196" width="310" x="676" y="-185.81" as="geometry" />
+        </mxCell>
+        <mxCell id="efr" parent="ef" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id：主键&lt;br&gt;FK material_item_id：所属材料项&lt;br&gt;&lt;code&gt;source_file_id&lt;/code&gt;&lt;br&gt;&lt;div&gt;filename：文件名；&lt;div&gt;url：下载地址&lt;br&gt;storage_uri：内部存储地址&lt;br&gt;status&lt;div&gt;error_message：处理结果&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;学位证.pdf、毕业证.pdf、验证报告.pdf&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="168" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="er" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="extract_extraction_results（抽取器返回的结构化结果）" vertex="1">
+          <mxGeometry height="155" width="310" x="676" y="73" as="geometry" />
+        </mxCell>
+        <mxCell id="err" parent="er" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id：主键&lt;br&gt;FK material_item_id：所属材料项&lt;br&gt;&lt;code&gt;package_index&lt;/code&gt;&lt;br&gt;&lt;div&gt;external_uuid：抽取器异步任务号&lt;br&gt;extracted JSON：抽取字段结果&lt;br&gt;status：抽取状态&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;对整个材料项返回的结构化结果&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="127" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="at" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_tasks（审核任务）" vertex="1">
+          <mxGeometry height="150" width="310" x="-721" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="atr" parent="at" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id：主键；&lt;div&gt;UK task_no：对外任务号&lt;br&gt;apply_guid：申报记录标识&lt;/div&gt;&lt;div&gt;&lt;code&gt;delivery_mode&lt;/code&gt;&lt;br&gt;audit_payload JSON：审核原始请求&lt;br&gt;execution_status：审核状态&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_items（审核任务中的单条业务记录）" vertex="1">
+          <mxGeometry height="158" width="310" x="-867" y="688" as="geometry" />
+        </mxCell>
+        <mxCell id="air" parent="ai" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id：主键；&lt;div&gt;FK audit_task_id：所属任务&lt;br&gt;business_id：业务记录号&lt;br&gt;matched_rule_set_codes JSON：命中规则集&lt;br&gt;item_payload JSON：待审核数据&lt;br&gt;execution_status：执行状态&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;一项可能匹配多个规则集。&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ar" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_rules（审核规则）" vertex="1">
+          <mxGeometry height="200.28571428575583" width="310" x="1154" y="407.5" as="geometry" />
+        </mxCell>
+        <mxCell id="arr" parent="ar" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id；&lt;div&gt;UK rule_code：规则唯一编码&lt;br&gt;rule_name：规则名称&lt;br&gt;runtime_type：规则运行时&lt;br&gt;expression_source&lt;/div&gt;&lt;div&gt;jdm_content&lt;/div&gt;&lt;div&gt;plugin_code：规则定义&lt;br&gt;enabled：启用状态&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;学历层次有效性校验：本科/硕士/博士&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="172" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="rs" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_rule_sets（规则集合）" vertex="1">
+          <mxGeometry height="150" width="310" x="305" y="418" as="geometry" />
+        </mxCell>
+        <mxCell id="rsr" parent="rs" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;rule_set_code：规则集编码&lt;/span&gt;&lt;/div&gt;rule_set_name：规则集名称&lt;br&gt;enabled：规则执行顺序&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;学历材料审核）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="na" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="notify_attempts（推送记录）" vertex="1">
+          <mxGeometry height="159" width="310" x="1099" y="713" as="geometry" />
+        </mxCell>
+        <mxCell id="nar" parent="na" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="kind&lt;div&gt;entity_id：抽取或审核业务对象&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;attempt_no：通知重试标识&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;callback_url：回调目标地址&lt;br&gt;request_body JSON：发送载荷&lt;br&gt;status：投递结果&lt;/div&gt;&lt;div&gt;&lt;code&gt;response_status_code&lt;/code&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="131" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="cd" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="code_dict_items（基础码值字典）" vertex="1">
+          <mxGeometry height="150" width="310" x="1094" y="923" as="geometry" />
+        </mxCell>
+        <mxCell id="cdr" parent="cd" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="dict_version：字典版本&lt;br&gt;material_category：材料类别&lt;br&gt;field_name：业务字段名&lt;br&gt;code&lt;div&gt;label：标准码值及文本&lt;br&gt;parent_chain：级联父级路径&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-11" edge="1" parent="1" source="fc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="ef">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-15" connectable="0" parent="9ddGRMt-hATItDQ_RAqW-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="1:1" vertex="1">
+          <mxGeometry relative="1" x="0.149" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fc" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="extract_file_classification_results（单个文件识别结果）" vertex="1">
+          <mxGeometry height="170" width="310" x="1154" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="fcr" parent="fc" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;startSize=45;" value="PK id；&lt;div&gt;UK file_id：一个文件一条分类结果&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;external_uuid：外部分类任务号&lt;br&gt;classification JSON：分类结果&lt;br&gt;status&lt;/div&gt;&lt;div&gt;attempts：执行过程&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;确认“本科毕业证书.pdf”属于什么文件类型或材料类别）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="142" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ei" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="extract_issues（抽取过程中的问题）" vertex="1">
+          <mxGeometry height="193" width="310" x="676" y="-431.81" as="geometry" />
+        </mxCell>
+        <mxCell id="eir" parent="ei" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;startSize=25;" value="PK id；&lt;div&gt;material_item_id：所属材料项&lt;br&gt;code&lt;/div&gt;&lt;div&gt;severity：问题编码与级别&lt;br&gt;message&lt;/div&gt;&lt;div&gt;suggestion：问题与建议&lt;br&gt;file_id&lt;/div&gt;&lt;div&gt;field&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;例如缺学位证、姓名不一致、学校无法识别。）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="al" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_rule_execution_logs（每条规则对每个审核项的实际执行记录与判定结果。）" vertex="1">
+          <mxGeometry height="197" width="310" x="-443" y="688" as="geometry" />
+        </mxCell>
+        <mxCell id="alr" parent="al" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id；&lt;div&gt;FK audit_item_id：所属审核项&lt;br&gt;rule_id&lt;/div&gt;&lt;div&gt;rule_code&lt;/div&gt;&lt;div&gt;rule_version：规则快照&lt;br&gt;execution_status&lt;/div&gt;&lt;div&gt;decision：技术状态与判定&lt;/div&gt;&lt;div&gt;message&lt;br&gt;output_text ：执行输出与错误&lt;br&gt;duration_ms：耗时与时间&lt;/div&gt;" vertex="1">
+          <mxGeometry height="169" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="mc" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_rule_match_configs（审核规则配置表）" vertex="1">
+          <mxGeometry height="170" width="351" x="-158" y="418" as="geometry" />
+        </mxCell>
+        <mxCell id="mcr" parent="mc" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id；UK match_config_code：配置编码&lt;br&gt;data_path：待匹配数据路径&lt;br&gt;condition_mode / conditions JSON：匹配条件&lt;br&gt;target_rule_set_codes / target_rule_sets JSON：目标规则集&lt;br&gt;enabled / version_no：状态和版本" vertex="1">
+          <mxGeometry height="142" width="351" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sa" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="system_accounts（系统登录账号）" vertex="1">
+          <mxGeometry height="145" width="310" x="704" y="1173" as="geometry" />
+        </mxCell>
+        <mxCell id="sar" parent="sa" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id；&lt;div&gt;UK username：登录名&lt;br&gt;password_hash：密码摘要&lt;br&gt;name：显示名称&lt;br&gt;is_active：账号是否可用&lt;/div&gt;" vertex="1">
+          <mxGeometry height="117" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="sf" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="files（平台内部存储的文件元数据）" vertex="1">
+          <mxGeometry height="145" width="310" x="1084" y="1173" as="geometry" />
+        </mxCell>
+        <mxCell id="sfr" parent="sf" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id；&lt;div&gt;bucket&lt;/div&gt;&lt;div&gt;object_key：对象存储定位&lt;br&gt;filename：文件信息&lt;br&gt;sha256：文件摘要；owner_id：所属人&lt;br&gt;expires_at：清理追踪&lt;/div&gt;" vertex="1">
+          <mxGeometry height="117" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="il" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="integration_logs（调用抽取器、客户网关等外部服务的集成日志）" vertex="1">
+          <mxGeometry height="145" width="310" x="1464" y="1173" as="geometry" />
+        </mxCell>
+        <mxCell id="ilr" parent="il" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="PK id；&lt;div&gt;batch_id：关联批次&lt;br&gt;system_name&amp;nbsp;&lt;/div&gt;&lt;div&gt;operation：外部系统和动作&lt;br&gt;url：调用定位&lt;br&gt;http_status：调用结果&lt;br&gt;&lt;code&gt;duration_ms&lt;/code&gt;：错误信息&lt;/div&gt;" vertex="1">
+          <mxGeometry height="117" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="r" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="mi" />
+        <mxCell id="e2" edge="1" parent="1" source="mi" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="ef" />
+        <mxCell id="e3" edge="1" parent="1" source="mi" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="er" />
+        <mxCell id="e4" edge="1" parent="1" source="at" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="ai" />
+        <mxCell id="e5" edge="1" parent="1" source="ar" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" target="rs" />
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;div&gt;&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;核心链路关系图&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;抽取批次 extract_requests&lt;/div&gt;&lt;div&gt;&amp;nbsp; └─ 材料项 extract_material_items&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;├─ 文件 extract_files&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;│&amp;nbsp; &amp;nbsp; └─ 分类结果 extract_file_classification_results&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;├─ 抽取结果 extract_extraction_results&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;└─ 抽取问题 extract_issues&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;审核任务 audit_tasks&lt;/div&gt;&lt;div&gt;&amp;nbsp; └─ 审核项 audit_items&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;└─ 规则执行日志 audit_rule_execution_logs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;规则集 audit_rule_sets&lt;/div&gt;&lt;div&gt;&amp;nbsp; └─ audit_rule_set_rules&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;└─ 审核规则 audit_rules&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;审核数据路径/条件 -&amp;gt; audit_rule_match_configs -&amp;gt; 规则集&lt;/div&gt;" vertex="1">
+          <mxGeometry height="282" width="558" x="-819" y="-556" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-6" edge="1" parent="1" source="efr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="mir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-14" connectable="0" parent="9ddGRMt-hATItDQ_RAqW-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="1:N" vertex="1">
+          <mxGeometry relative="1" x="0.1955" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-8" parent="1" style="shape=table;startSize=28;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=1;fontStyle=1;align=center;html=1;" value="audit_rule_set_rules（规则集合）" vertex="1">
+          <mxGeometry height="150" width="310" x="718" y="414.5" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-9" parent="9ddGRMt-hATItDQ_RAqW-8" style="shape=tableRow;html=1;align=left;verticalAlign=top;spacing=6;fontSize=12;" value="&lt;div&gt;rule_set_id&lt;/div&gt;&lt;div&gt;rule_id：关联两端外键&lt;/div&gt;execution_order：规则执行顺序&lt;br&gt;override_config JSON：规则集覆盖配置&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;（例如：&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;规则集包含哪些具体规则，以及执行顺序。&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;）&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="310" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-10" edge="1" parent="1" source="eir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="mi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-18" connectable="0" parent="9ddGRMt-hATItDQ_RAqW-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="1:N" vertex="1">
+          <mxGeometry relative="1" x="0.2103" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-12" edge="1" parent="1" source="mir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="rr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-13" connectable="0" parent="9ddGRMt-hATItDQ_RAqW-12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="1:N" vertex="1">
+          <mxGeometry relative="1" x="0.1695" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-16" edge="1" parent="1" source="err" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="mir">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="626.22" y="96.96999999999997" />
+              <mxPoint x="626.22" y="-85.81" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-17" connectable="0" parent="9ddGRMt-hATItDQ_RAqW-16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=12;fontColor=default;" value="1:N" vertex="1">
+          <mxGeometry relative="1" x="-0.4538" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-19" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;text-align: center; text-wrap-mode: nowrap;&quot;&gt;&lt;font&gt;extract_requests&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;{&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;id&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;biz_id&quot;: &quot;APPLY-2026-00001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;batch_id&quot;: &quot;BATCH-20260730-0001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;phase&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;progress&quot;: 100,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;user_id&quot;: &quot;zhangsan-001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;applicant_name&quot;: &quot;张三&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;apply_payload&quot;: {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;applyGuid&quot;: &quot;APPLY-2026-00001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;applicantName&quot;: &quot;张三&quot;&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;result_payload&quot;: {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;notify_status&quot;: &quot;SUCCESS&quot;&lt;/p&gt;&lt;p&gt;}&lt;/p&gt;" vertex="1">
+          <mxGeometry height="530.81" width="338.5" x="1420" y="-873" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-20" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;text-align: center; text-wrap-mode: nowrap; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font&gt;extract_material_items&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;{&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;id&quot;: 101,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;extract_request_id&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;source_material_item_id&quot;: &quot;EDUCATION-UNDERGRADUATE-001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;material_category&quot;: &quot;EDUCATION&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;material_item_name&quot;: &quot;本科学历&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;input_revision&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;status&quot;: &quot;completed&quot;&lt;/p&gt;&lt;p&gt;}&lt;/p&gt;" vertex="1">
+          <mxGeometry height="299" width="305.25" x="1770" y="-873" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-21" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;code&gt;extract_files&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;[&lt;/p&gt;&lt;p&gt;&amp;nbsp; {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;id&quot;: 1001,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;material_item_id&quot;: 101,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;source_file_id&quot;: &quot;OPEN-TEXT-001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;filename&quot;: &quot;本科毕业证书.pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;url&quot;: &quot;https://customer-gateway.example/download/OPEN-TEXT-001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;storage_uri&quot;: &quot;local://extract/BATCH-20260730-0001/1001.pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;mime_type&quot;: &quot;application/pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;size_bytes&quot;: 842000,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;sha256&quot;: &quot;a1b2c3d4...&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;process_attempts&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;dispatch_attempts&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;error_code&quot;: null,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;error_message&quot;: null&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;id&quot;: 1002,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;material_item_id&quot;: 101,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;source_file_id&quot;: &quot;OPEN-TEXT-002&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;filename&quot;: &quot;学士学位证书.pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;url&quot;: &quot;https://customer-gateway.example/download/OPEN-TEXT-002&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;storage_uri&quot;: &quot;local://extract/BATCH-20260730-0001/1002.pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;mime_type&quot;: &quot;application/pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;size_bytes&quot;: 716000,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;sha256&quot;: &quot;e5f6g7h8...&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;process_attempts&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;dispatch_attempts&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;error_code&quot;: null,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;error_message&quot;: null&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;id&quot;: 1003,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;material_item_id&quot;: 101,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;source_file_id&quot;: &quot;OPEN-TEXT-003&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;filename&quot;: &quot;学信网验证报告.pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;url&quot;: &quot;https://customer-gateway.example/download/OPEN-TEXT-003&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;storage_uri&quot;: &quot;local://extract/BATCH-20260730-0001/1003.pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;mime_type&quot;: &quot;application/pdf&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;size_bytes&quot;: 1204000,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;sha256&quot;: &quot;i9j0k1l2...&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;process_attempts&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;dispatch_attempts&quot;: 1,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;error_code&quot;: null,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;error_message&quot;: null&lt;/p&gt;&lt;p&gt;&amp;nbsp; }&lt;/p&gt;&lt;p&gt;]&lt;/p&gt;" vertex="1">
+          <mxGeometry height="1370" width="447" x="2164" y="-873" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-22" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;code&gt;extract_file_classification_results&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;[&lt;/p&gt;&lt;p&gt;&amp;nbsp; {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;id&quot;: 2001,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;file_id&quot;: 1001,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;classifier_id&quot;: &quot;document-classifier-v1&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;external_uuid&quot;: &quot;classify-task-001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;classification&quot;: {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;document_type&quot;: &quot;毕业证书&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;material_category&quot;: &quot;EDUCATION&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;confidence&quot;: 0.98&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;attempts&quot;: 1&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;id&quot;: 2002,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;file_id&quot;: 1002,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;classifier_id&quot;: &quot;document-classifier-v1&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;external_uuid&quot;: &quot;classify-task-002&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;classification&quot;: {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;document_type&quot;: &quot;学位证书&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;material_category&quot;: &quot;EDUCATION&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;confidence&quot;: 0.99&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;attempts&quot;: 1&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;id&quot;: 2003,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;file_id&quot;: 1003,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;classifier_id&quot;: &quot;document-classifier-v1&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;external_uuid&quot;: &quot;classify-task-003&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;classification&quot;: {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;document_type&quot;: &quot;学历验证报告&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;material_category&quot;: &quot;EDUCATION&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &quot;confidence&quot;: 0.97&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;status&quot;: &quot;completed&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;attempts&quot;: 1&lt;/p&gt;&lt;p&gt;&amp;nbsp; }&lt;/p&gt;&lt;p&gt;]&lt;/p&gt;" vertex="1">
+          <mxGeometry height="1124" width="540" x="2700" y="-873" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-23" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;code&gt;extract_extraction_results&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;[&lt;/p&gt;&lt;p&gt;{&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;id&quot;: 3001,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;material_item_id&quot;: 101,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;package_index&quot;: 0,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;extractor_id&quot;: &quot;fabarta-extractor&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;external_uuid&quot;: &quot;extract-task-001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;input_fingerprint&quot;: &quot;sha256:material-package-101-v1&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;extracted&quot;: {&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;name&quot;: &quot;张三&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;school&quot;: &quot;北京大学&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;major&quot;: &quot;计算机科学与技术&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;education&quot;: &quot;本科&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;graduation_date&quot;: &quot;2018-06&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;degree&quot;: &quot;学士&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; &quot;degree_type&quot;: &quot;工学学士&quot;&lt;/p&gt;&lt;p&gt;&amp;nbsp; },&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;raw_response_ref&quot;: &quot;local://extract/raw/extract-task-001.json&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;status&quot;: &quot;completed&quot;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;]&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="609" width="430" x="3395" y="-873" as="geometry" />
+        </mxCell>
+        <mxCell id="9ddGRMt-hATItDQ_RAqW-24" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;code&gt;extract_issues&lt;/code&gt;&lt;/h1&gt;&lt;p&gt;{&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;id&quot;: 4001,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;material_item_id&quot;: 101,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;issue_id&quot;: &quot;ISSUE-EDUCATION-0001&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;code&quot;: &quot;PERSON_NAME_MISMATCH&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;severity&quot;: &quot;HIGH&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;message&quot;: &quot;毕业证书与学位证书中的姓名不一致。&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;suggestion&quot;: &quot;请补充有效身份证明或重新上传正确材料。&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;material_category&quot;: &quot;EDUCATION&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;file_id&quot;: 1002,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;field&quot;: &quot;name&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;rule_id&quot;: &quot;EDUCATION_NAME_CONSISTENCY&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;source&quot;: &quot;postprocess&quot;,&lt;/p&gt;&lt;p&gt;&amp;nbsp; &quot;batch_id&quot;: &quot;BATCH-20260730-0001&quot;&lt;/p&gt;&lt;p&gt;}&lt;/p&gt;" vertex="1">
+          <mxGeometry height="459" width="430" x="3860" y="-873" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

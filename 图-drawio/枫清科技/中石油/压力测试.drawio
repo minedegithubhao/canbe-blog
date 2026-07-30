@@ -1,0 +1,94 @@
+<mxfile host="embed.diagrams.net">
+  <diagram id="OjYw6yGHvoZRQUtXN0RC" name="第 1 页">
+    <mxGraphModel dx="719" dy="985" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4iQfHespnngvyUGqFrud-26" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4iQfHespnngvyUGqFrud-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-27" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4iQfHespnngvyUGqFrud-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-28" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4iQfHespnngvyUGqFrud-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="压力测试" vertex="1">
+          <mxGeometry height="60" width="120" x="57" y="-122" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-30" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4iQfHespnngvyUGqFrud-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-35" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4iQfHespnngvyUGqFrud-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="AI Perf 固定并发&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;测基础吞吐量&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="264" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="AI Perf 泊松QPS&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;测长时间稳定性&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="258" y="-122" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-49" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="4iQfHespnngvyUGqFrud-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="流式并发&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;测用户交互体验&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="6" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-29" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;AI Perf固定并发&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px;&quot;&gt;持续保持固定数量客户端同时发请求，模拟多人同时调用接口&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="912" y="-279" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-31" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;AI Perf泊松QPS&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px;&quot;&gt;知识流量仿真压测&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="104" width="180" x="1202" y="-144" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-32" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;补充流式并发&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px;&quot;&gt;对话打字机流式接口&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px;&quot;&gt;TTFT：首token延迟，代表体感，越低越好&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px;&quot;&gt;末token延迟：代表整个链路耗时，越低越好&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px;&quot;&gt;&lt;code&gt;生成速度：&lt;/code&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;每秒能生成多少个字或 token。越高，越好&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;code&gt;JSON 有效率：&lt;/code&gt;AI 按 JSON 格式返回&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;的比例，&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;越高越好。&lt;/span&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="211.5" width="318" x="1081" y="-50.5" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0.8); font-family: Inter, -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;SF Pro SC&amp;quot;, &amp;quot;SF Pro Display&amp;quot;, &amp;quot;SF Pro Icons&amp;quot;, &amp;quot;PingFang SC&amp;quot;, &amp;quot;Hiragino Sans GB&amp;quot;, &amp;quot;Microsoft YaHei&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 15px; text-align: left;&quot;&gt;并发 1/5/10/15/20；每档 60 次正式请求，预热 5 次；非流式请求&lt;/span&gt;" vertex="1">
+          <mxGeometry height="65" width="154" x="444" y="-252.5" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-38" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4iQfHespnngvyUGqFrud-39" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="598" y="-220" as="sourcePoint" />
+            <mxPoint x="912" y="-219" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="固定并发：持续保持固定数量客户端同时发请求，模拟多人同时调用接口&#xa;档位：1、5、10、15、20 个并发用户&#xa;预热 5 次：先跑 5 次请求让服务、模型加载缓存 / 预热，不计入统计，避免冷启动干扰数据&#xa;每档 60 次正式请求：每个并发档位稳定跑 60 轮有效请求，用来计算平均时延、成功率、QPS&#xa;非流式请求：一次性返回完整回答（不是打字逐字输出，普通同步接口）" vertex="1">
+          <mxGeometry height="164" width="221" x="656" y="-302" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-41" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="4iQfHespnngvyUGqFrud-42" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="384" y="-92" as="sourcePoint" />
+            <mxPoint x="912" y="-92" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-46" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="4iQfHespnngvyUGqFrud-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;" value="目标 0.02/0.05/0.1/0.2 QPS；每档约 600 秒，预热 60 秒，最大并发 20" vertex="1">
+          <mxGeometry height="65" width="135" x="453.5" y="-124.5" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-47" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="4iQfHespnngvyUGqFrud-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=Helvetica;fontSize=12;fontColor=default;gradientColor=none;" value="&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;泊松 QPS：按泊松分布生成请求，模拟线上真实用户随机、不均匀的访问流量（更贴近生产环境）&lt;/span&gt;&lt;br style=&quot;font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;目标 QPS：每秒目标请求数，档位 0.02、0.05、0.1、0.2 次 / 秒（低流量、小并发场景）&lt;/span&gt;&lt;br style=&quot;font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;每档 600 秒：每个流量档位持续压测 10 分钟，长时间跑看服务稳定性、内存泄漏、抖动&lt;/span&gt;&lt;br style=&quot;font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;预热 60 秒：前 60 秒预热，不采集指标&lt;/span&gt;&lt;br style=&quot;font-size: 11px; text-wrap-mode: nowrap;&quot;&gt;&lt;span style=&quot;font-size: 11px; text-wrap-mode: nowrap; background-color: rgb(255, 255, 255);&quot;&gt;最大并发 20：限制同时最多 20 个请求在处理，防止压垮服务&lt;/span&gt;" vertex="1">
+          <mxGeometry height="91" width="401" x="648" y="-137.5" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-50" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="4iQfHespnngvyUGqFrud-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-48" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=none;gradientColor=none;" value="并发 1/5/10/12/15/20；每档 60 次请求；统计 TTFT、末 Token 时延、生成速度和 JSON 有效率" vertex="1">
+          <mxGeometry height="61" width="159" x="453.5" y="5" as="geometry" />
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-51" edge="1" parent="1" source="4iQfHespnngvyUGqFrud-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=12;fontColor=default;" target="4iQfHespnngvyUGqFrud-52" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="613" y="36" as="sourcePoint" />
+            <mxPoint x="1026" y="36" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4iQfHespnngvyUGqFrud-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;gradientColor=none;" value="TTFT（Time To First Token）首 token 时延：发请求后，收到第一个文字块的耗时（用户感知最关键，等待多久才出第一个字）&#xa;末 Token 时延：从请求发出到完整回复全部生成完毕的总耗时&#xa;生成速度：单位时间生成 token 数量（tokens/s，衡量模型推理快慢）&#xa;JSON 有效率：流式返回的结构化 JSON 片段完整、无截断、解析成功的比例，判断接口流式输出稳定性" vertex="1">
+          <mxGeometry height="110" width="349" x="665" y="-19" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

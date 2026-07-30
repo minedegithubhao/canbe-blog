@@ -13,10 +13,10 @@
             "state": {
               "type": "drawio-file-view",
               "state": {
-                "file": "枫清科技/业务知识.drawio"
+                "file": "枫清科技/中石油/代码介绍.drawio"
               },
               "icon": "pencil-ruler",
-              "title": "业务知识"
+              "title": "代码介绍"
             }
           }
         ]
@@ -76,7 +76,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d1e4c49cffc03766",
@@ -182,19 +183,20 @@
   },
   "active": "a4a56e1670e48ff9",
   "lastOpenFiles": [
+    "枫清科技/中石油/业务方案.drawio",
+    "枫清科技/中石油/中石油.md",
+    "枫清科技/称呼.drawio",
+    "枫清科技/中石油/代码介绍.drawio",
+    "枫清科技/中石油/压力测试.drawio",
+    "枫清科技/日报.md",
+    "枫清科技/中石油",
     "枫清科技/学习方法论.drawio",
     "枫清科技/业务知识.drawio",
-    "枫清科技/日报.md",
+    "枫清科技/职业发展规划-枫清.md",
+    "Agent/多智能体调度.drawio",
     "枫清科技/专业术语.drawio",
     "枫清科技/Drawing 2026-07-28 15.26.58.excalidraw.md",
     "枫清科技/工作方法论.drawio",
-    "Agent/多智能体调度.drawio",
-    "Agent/Agent项目.drawio",
-    "枫清科技/职业发展规划-枫清.md",
-    "Agent/Agent.drawio",
-    "Agent/零售行业Agent.drawio",
-    "Agent/Jwt权限控制.drawio",
-    "枫清科技/称呼.drawio",
     "枫清科技/专业术语.md",
     "Excalidraw/个税.md",
     "YZW短视频/短视频.md",
@@ -217,7 +219,6 @@
     "面试题/面试题/Attention与Transformer面试题_40题.md",
     "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_高频索引.md",
     "面试题(1)/面试题/西安AI大模型2期整理/技术题/技术面试题_原始题目汇总.md",
-    "面试题(1)/面试题/西安AI大模型2期整理/人际题/人际面试题_高频汇总.md",
     "未命名 1.canvas"
   ]
 }

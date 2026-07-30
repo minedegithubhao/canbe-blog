@@ -217,7 +217,7 @@
         <mxCell id="JUxJ-syD2oil7xy0yVbv-6" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;飞机&lt;/h1&gt;&lt;p&gt;选飞机既能购买飞机票、也能购买高铁票&lt;/p&gt;&lt;p&gt;飞机差旅必须提前48小时提交申请&lt;/p&gt;&lt;p&gt;时间：必须是9点前、6点后的飞机票&lt;/p&gt;" vertex="1">
           <mxGeometry height="143" width="199" x="555" y="74" as="geometry" />
         </mxCell>
-        <mxCell id="JUxJ-syD2oil7xy0yVbv-7" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;高铁&lt;/h1&gt;&lt;p&gt;智能能购买高铁票、不能购买飞机票&lt;/p&gt;&lt;p&gt;没有提前48小时申请的限制&lt;/p&gt;&lt;p&gt;时间：没有时间限制&lt;/p&gt;" vertex="1">
+        <mxCell id="JUxJ-syD2oil7xy0yVbv-7" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;高铁&lt;/h1&gt;&lt;p&gt;只能能购买高铁票、不能购买飞机票&lt;/p&gt;&lt;p&gt;没有提前48小时申请的限制&lt;/p&gt;&lt;p&gt;时间：没有时间限制&lt;/p&gt;" vertex="1">
           <mxGeometry height="140" width="203" x="555" y="241" as="geometry" />
         </mxCell>
         <mxCell id="JUxJ-syD2oil7xy0yVbv-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="打车" vertex="1">
